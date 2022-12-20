@@ -115,6 +115,11 @@ public class PetCleaning extends javax.swing.JFrame {
         });
 
         jButton2.setText("登録");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("ユーザーID");
 
@@ -364,6 +369,7 @@ public class PetCleaning extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Connection conn = null;
         Statement stmt = null;
+        
 
         final String url = "jdbc:postgresql://localhost:5432/hr";
         final String user = "postgres";
@@ -392,10 +398,13 @@ public class PetCleaning extends javax.swing.JFrame {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO pet_info(会員番号,ユーザーID,パスワード,名前飼い主,性別,生年月日,住所,電話番号,EMAIL,ペット種類,多頭飼い,ペット名前,ペット生年月日,ペット性別,ワクチン接種日,ペット病歴,del_flag,作成日付,更新h日付)"
-                    + " VALUES(('" + custermnumber + "','" + userid + "','" + userpassword + "','" + name + "','" + sex + "'," + born + "','" + address + "','" + tel + "','" + email + "','" + pettype + "',"
-                    + "'" + multiheaded + "','" + petname + "','" + petborn + "','" + petsex + "','" + vaccinationdate + "','" + petmedicalhistory + "','" + 0 + "','" + creationdate + "','" + updatingdate + "');";
-
+            String sql = "INSERT INTO custerm_info(会員番号,ユーザーID,パスワード,名前飼い主,性別,生年月日,住所,電話番号,EMAIL,ペット種類,多頭飼い,ペット名前,ペット生年月日,ペット性別,ワクチン接種日,ペット病歴,del_flag,作成日付,更新日付)\n"
+                    + " VALUES('" + custermnumber + "','" + userid + "','" + userpassword + "','" + name + "','" + sex + "'," + born + "','" + address + "')\n"
+                    + "('" + tel + "','" + email + "','" + pettype + "','" + multiheaded + "','" + petname + "','" + petborn + "','" + petsex + "','" + vaccinationdate + "')\n"
+                    + "('" + petmedicalhistory + "','" + 0 + "','" + creationdate + "','" + updatingdate + "');";
+            System.out.println(sql);
+            stmt.executeUpdate(sql);
+            
             stmt.close();
             conn.close();
 
@@ -429,7 +438,8 @@ public class PetCleaning extends javax.swing.JFrame {
             while (rset.next()) {
                 df.addRow(new String[]{rset.getString(1), rset.getString(2), rset.getString(3),
                     rset.getString(4), rset.getString(5), rset.getString(6), rset.getString(7), rset.getString(8), rset.getString(9),
-                 rset.getString(10), rset.getString(11), rset.getString(12), rset.getString(13), rset.getString(14), rset.getString(15), rset.getString(16), rset.getString(17),});
+                    rset.getString(10), rset.getString(11), rset.getString(12), rset.getString(13), rset.getString(14),
+                    rset.getString(15), rset.getString(16), rset.getString(18),rset.getString(19),});
             }
             rset.close();
             stmt.close();
@@ -449,24 +459,26 @@ public class PetCleaning extends javax.swing.JFrame {
         userid.setText(df.getValueAt(row, 1).toString());
         userpassword.setText(df.getValueAt(row, 2).toString());
         name.setText(df.getValueAt(row, 3).toString());
-        born.setText(df.getValueAt(row, 4).toString());
-        address.setText(df.getValueAt(row, 5).toString());
-        tel.setText(df.getValueAt(row, 6).toString());
-        email.setText(df.getValueAt(row, 7).toString());
-        pettype.setText(df.getValueAt(row, 8).toString());
-        multiheaded.setText(df.getValueAt(row, 9).toString());
-        petname.setText(df.getValueAt(row, 10).toString());
-        petborn.setText(df.getValueAt(row, 11).toString());
-        petsex.setText(df.getValueAt(row, 12).toString());
-        vaccinationdate.setText(df.getValueAt(row, 13).toString());
-        petmedicalhistory.setText(df.getValueAt(row, 14).toString());
-        creationdate.setText(df.getValueAt(row, 15).toString());
-        updatingdate.setText(df.getValueAt(row, 16).toString());
+        sex.setText(df.getValueAt(row, 4).toString());
+        born.setText(df.getValueAt(row, 5).toString());
+        address.setText(df.getValueAt(row, 6).toString());
+        tel.setText(df.getValueAt(row, 7).toString());
+        email.setText(df.getValueAt(row, 8).toString());
+        pettype.setText(df.getValueAt(row, 9).toString());
+        multiheaded.setText(df.getValueAt(row, 10).toString());
+        petname.setText(df.getValueAt(row, 11).toString());
+        petborn.setText(df.getValueAt(row, 12).toString());
+        petsex.setText(df.getValueAt(row, 13).toString());
+        vaccinationdate.setText(df.getValueAt(row, 14).toString());
+        petmedicalhistory.setText(df.getValueAt(row, 15).toString());
+        creationdate.setText(df.getValueAt(row, 16).toString());
+        updatingdate.setText(df.getValueAt(row, 17).toString());
 
         System.out.println(custermnumber.getText());
         System.out.println(userid.getText());
         System.out.println(userpassword.getText());
         System.out.println(name.getText());
+         System.out.println(sex.getText());
         System.out.println(born.getText());
         System.out.println(address.getText());
         System.out.println(tel.getText());
@@ -502,6 +514,10 @@ public class PetCleaning extends javax.swing.JFrame {
     private void creationdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creationdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_creationdateActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
