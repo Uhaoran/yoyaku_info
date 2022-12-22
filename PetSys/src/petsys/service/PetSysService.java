@@ -77,6 +77,7 @@ public class PetSysService {
             
             d.setCustermnunmber(e.getCustermnumber());
             d.setUserid(e.getUserid());
+            d.setUserpassword(e.getUserpassword());
             d.setName(e.getName());
             d.setSex(e.getSex());
             d.setBorn(e.getBorn());

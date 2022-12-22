@@ -110,7 +110,7 @@ public class PetSysController extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("お客様情報");
+        jButton1.setText("お客様情報検索");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
