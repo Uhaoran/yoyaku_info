@@ -42,7 +42,7 @@ public class PetSysService {
 
         PetSysEntity entity = new PetSysEntity();
 
-        entity.setCustermnumber(petSysDto.getCustermnumber());
+        entity.setCustermnunmber(petSysDto.getCustermnumber());
         entity.setUserid(petSysDto.getUserid());
         entity.setUserpassword(petSysDto.getUserpassword());
         entity.setName(petSysDto.getName());
@@ -56,6 +56,7 @@ public class PetSysService {
         entity.setPetname(petSysDto.getPetname());
         entity.setPetborn(petSysDto.getPetborn());
         entity.setPetsex(petSysDto.getPetsex());
+        entity.setVaccinationdate(petSysDto.getVaccinationdate());
         entity.setPetmedicalhistory(petSysDto.getPetmedicalhistory());
         entity.setCreationdate(petSysDto.getCreationdate());
         entity.setUpdatingdate(petSysDto.getUpdatingdate());

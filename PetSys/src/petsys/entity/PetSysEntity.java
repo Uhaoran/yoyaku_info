@@ -18,7 +18,7 @@ public class PetSysEntity {
     private String sex;
     private String born;
     private String address;
-    private int tel;
+    private String tel;
     private String email;
     private String pettype;
     private String multiheaded;
@@ -58,7 +58,7 @@ public class PetSysEntity {
         return address;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
@@ -130,7 +130,7 @@ public class PetSysEntity {
         this.address = address;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
@@ -174,7 +174,4 @@ public class PetSysEntity {
         this.updatingdate = updatingdate;
     }
 
-    public void setCustermnumber(int custermnumber) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

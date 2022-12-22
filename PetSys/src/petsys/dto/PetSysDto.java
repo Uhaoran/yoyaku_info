@@ -18,7 +18,7 @@ public class PetSysDto {
     private String sex;
     private String born;
     private String address;
-    private int tel;
+    private String tel;
     private String email;
     private String pettype;
     private String multiheaded;
@@ -58,7 +58,7 @@ public class PetSysDto {
         return address;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
@@ -130,7 +130,7 @@ public class PetSysDto {
         this.address = address;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 

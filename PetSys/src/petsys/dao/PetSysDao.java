@@ -36,11 +36,47 @@ public class PetSysDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO custerm_info(custermnumber,userid,userpassword,name,sex,born,address,tel,email,pettype,multiheaded,petname,petborn,petsex,"
-                    + "vaccinationdate,petmedicalhistory,del_flag,creationdate,updatingdate)\n"
-                    + " VALUES('" + entity.getCustermnumber() + "','" + entity.getUserid() + "','" + entity.getUserpassword() + "','" + entity.getName() + "','" + entity.getSex() + "'," + entity.getBorn() + "','" + entity.getAddress() + "',"
-                    + "'" + entity.getTel() + "','" + entity.getEmail() + "','" + entity.getPettype() + "','" + entity.getMultiheaded() + "','" + entity.getPetname() + "','" + entity.getPetborn() + "','" + entity.getPetsex() + "','" + entity.getVaccintiondate() + "',"
-                    + "'" + entity.getPetmedicalhistory() + "','" + 0 + "','" + entity.getCreationdate() + "','" + entity.getUpdatingdate() + "');";
+            String sql = 	"INSERT "
+	+ "INTO custerm_info( "
+	+ "    userid "
+	+ "    , userpassword "
+	+ "    , name "
+	+ "    , sex "
+	+ "    , born "
+	+ "    , address "
+	+ "    , tel "
+	+ "    , email "
+	+ "    , pettype "
+	+ "    , multiheaded "
+	+ "    , petname "
+	+ "    , petborn "
+	+ "    , petsex "
+	+ "    , vaccinationdate "
+	+ "    , petmedicalhistory "
+	+ "    , del_flag "
+	+ "    , creationdate "
+	+ "    , updatingdate "
+	+ ") "
+	+ "VALUES ( "
+	+ "    'entity.getUserid()' "
+	+ "    , 'entity.getUserpassword()' "
+	+ "    , ' entity.getName()' "
+	+ "    , 'entity.getSex()' "
+	+ "    , 'entity.getBorn()' "
+	+ "    ,'entity.getAddress()' "
+	+ "    ,'entity.getTel()' "
+	+ "    ,'entity.getEmail() ' "
+	+ "    ,' entity.getPettype()' "
+	+ "    ,'entity.getMultiheaded()' "
+	+ "    ,' entity.getPetname()' "
+	+ "    ,'entity.getPetborn()' "
+	+ "    ,'entity.getPetsex() ' "
+	+ "    ,'entity.getVaccintiondate() ' "
+	+ "    ,'entity.getPetmedicalhistory()' "
+	+ "    ,'0' "
+	+ "    ,'entity.getCreationdate()' "
+	+ "    ,'entity.getUpdatingdate()'); ";
+
             System.out.println(sql);
             stmt.executeUpdate(sql);
 
@@ -72,14 +108,14 @@ public class PetSysDao {
 
                     PetSysEntity entity = new PetSysEntity();
 
-                    entity.setCustermnumber(rset.getInt(1));
+                    entity.setCustermnunmber(rset.getInt(1));
                     entity.setUserid(rset.getString(2));
                     entity.setUserpassword(rset.getString(3));
                     entity.setName(rset.getString(4));
                     entity.setSex(rset.getString(5));
                     entity.setBorn(rset.getString(6));
                     entity.setAddress(rset.getString(7));
-                    entity.setTel(rset.getInt(8));
+                    entity.setTel(rset.getString(8));
                     entity.setEmail(rset.getString(9));
                     entity.setPettype(rset.getString(10));
                     entity.setMultiheaded(rset.getString(11));
@@ -105,4 +141,5 @@ public class PetSysDao {
         return list;
 
     }
+    
 }
