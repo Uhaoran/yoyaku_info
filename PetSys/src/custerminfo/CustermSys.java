@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package petsys;
+package custerminfo;
 
 /**
  *
  * @author WU HAORAN
  */
-public class PetSys {
+public class CustermSys {
 
+    
+    
+    
     /**
      * @param args the command line arguments
      */
