@@ -78,7 +78,7 @@ public class YoyakuSysController extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("予約取り消し");
+        jButton2.setText("予約キャンセル");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

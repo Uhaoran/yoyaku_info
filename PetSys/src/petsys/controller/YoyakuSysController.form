@@ -174,7 +174,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x53d6;&#x308a;&#x6d88;&#x3057;"/>
+        <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x30ad;&#x30e3;&#x30f3;&#x30bb;&#x30eb;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
