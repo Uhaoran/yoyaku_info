@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yoyakusys.service;
+package petsys.service;
 
-import yoyakusys.dao.YoyakuSysDao;
-import yoyakusys.dto.YoyakuSysDto;
-import yoyakusys.entity.YoyakuSysEntity;
+import petsys.dao.YoyakuSysDao;
+import petsys.dto.YoyakuSysDto;
+import petsys.entity.YoyakuSysEntity;
 
 /**
  *

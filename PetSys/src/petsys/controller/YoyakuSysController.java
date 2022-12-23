@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package yoyakusys.controller;
+package petsys.controller;
 
-import yoyakusys.dto.YoyakuSysDto;
-import yoyakusys.service.YoyakuSysService;
+import petsys.dto.YoyakuSysDto;
+import petsys.service.YoyakuSysService;
 
 /**
  *
