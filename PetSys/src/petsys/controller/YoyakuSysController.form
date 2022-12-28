@@ -238,6 +238,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x60c5;&#x5831;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>

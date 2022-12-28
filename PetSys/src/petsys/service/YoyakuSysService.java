@@ -5,6 +5,8 @@
  */
 package petsys.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import petsys.dao.YoyakuSysDao;
 import petsys.dto.YoyakuSysDto;
 import petsys.entity.YoyakuSysEntity;
@@ -32,11 +34,11 @@ public class YoyakuSysService {
         entity.setCourse(yoyakuSysDto.getCourse());
         entity.setCheckin(yoyakuSysDto.getCheckin());
         entity.setTimes(yoyakuSysDto.getTimes());
-        
+
         yoyakuSysDao.createYoyakuSys(entity);
 
     }
-    
+
     public void deleteYoyakuSys(YoyakuSysDto yoyakuSysDto) {
 
         System.out.println(yoyakuSysDto.getUserid());
@@ -52,8 +54,29 @@ public class YoyakuSysService {
         entity.setCourse(yoyakuSysDto.getCourse());
         entity.setCheckin(yoyakuSysDto.getCheckin());
         entity.setTimes(yoyakuSysDto.getTimes());
-        
+
         yoyakuSysDao.deleteYoyakuSys(entity);
 
     }
+
+    public List<YoyakuSysDto> selectAll() {
+        List<YoyakuSysEntity> list = yoyakuSysDao.selectYoyakuSys();
+
+        List<YoyakuSysDto> dto = new ArrayList<>();
+        for (YoyakuSysEntity e : list) {
+
+            YoyakuSysDto d = new YoyakuSysDto();
+
+            d.setUserid(e.getUserid());
+            d.setPettype(e.getPettype());
+            d.setCourse(e.getCourse());
+            d.setCheckin(e.getCheckin());
+            d.setTimes(e.getTimes());
+
+            dto.add(d);
+        }
+
+        return dto;
+    }
+
 }

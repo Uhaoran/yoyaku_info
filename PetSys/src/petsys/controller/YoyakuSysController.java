@@ -5,6 +5,8 @@
  */
 package petsys.controller;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 import petsys.dto.YoyakuSysDto;
 import petsys.service.YoyakuSysService;
 
@@ -13,7 +15,9 @@ import petsys.service.YoyakuSysService;
  * @author WU HAORAN
  */
 public class YoyakuSysController extends javax.swing.JFrame {
-     YoyakuSysService yoyakuSysService=new YoyakuSysService();
+
+    YoyakuSysService yoyakuSysService = new YoyakuSysService();
+
     /**
      * Creates new form YoyakuSysController
      */
@@ -99,6 +103,11 @@ public class YoyakuSysController extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton3.setText("予約情報");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("多頭同時予約には一度電話での確認してください。03-9999-9999");
 
@@ -189,15 +198,15 @@ public class YoyakuSysController extends javax.swing.JFrame {
     }//GEN-LAST:event_useridActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+
         YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
-        
+
         yoyakuSysDto.setUserid(userid.getText());
         yoyakuSysDto.setPettype(pettype.getText());
         yoyakuSysDto.setCourse(course.getText());
         yoyakuSysDto.setCheckin(checkin.getText());
         yoyakuSysDto.setTimes(times.getText());
-    
+
         yoyakuSysService.createYoyakuSys(yoyakuSysDto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -206,18 +215,40 @@ public class YoyakuSysController extends javax.swing.JFrame {
     }//GEN-LAST:event_pettypeActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-          YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
-        
+        YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
+
         yoyakuSysDto.setUserid(userid.getText());
         yoyakuSysDto.setPettype(pettype.getText());
         yoyakuSysDto.setCourse(course.getText());
         yoyakuSysDto.setCheckin(checkin.getText());
         yoyakuSysDto.setTimes(times.getText());
-    
+
         yoyakuSysService.deleteYoyakuSys(yoyakuSysDto);
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        YoyakuSysList();
+
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+    /**
+     * 初期化
+     */
+    private void YoyakuSysList() {
+
+        List<YoyakuSysDto> dto = yoyakuSysService.selectAll();
+
+        DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
+
+        df.setRowCount(0);
+
+        for (YoyakuSysDto d : dto) {
+            df.addRow(new Object[]{d.getUserid(), d.getPettype(), d.getCourse(), d.getCheckin(), d.getTimes()});
+        }
+
+    }
 
     /**
      * @param args the command line arguments

@@ -65,6 +65,16 @@ public class PetSysService {
 
     }
 
+    public void loginPetSys(PetSysDto petSysDto) {
+        
+        
+        
+        
+        
+        
+
+    }
+
     public List<PetSysDto> selectAll() {
 
         List<PetSysEntity> list = petSysDao.selectPetSys();
@@ -72,9 +82,9 @@ public class PetSysService {
         List<PetSysDto> dto = new ArrayList<>();
 
         for (PetSysEntity e : list) {
-            
+
             PetSysDto d = new PetSysDto();
-            
+
             d.setCustermnunmber(e.getCustermnumber());
             d.setUserid(e.getUserid());
             d.setUserpassword(e.getUserpassword());

@@ -29,6 +29,24 @@ public class PetSysEntity {
     private String petmedicalhistory;
     private String creationdate;
     private String updatingdate;
+    private String loginId;
+    private String loginPass;
+
+    public String getLoginId() {
+        return userid;
+    }
+
+    public void setLoginID(String loginId) {
+        this.loginId = userid;
+    }
+
+    public String getLoginPass() {
+        return userpassword;
+    }
+
+    public void setLoginPass() {
+        this.loginPass = userpassword;
+    }
 
     public int getCustermnumber() {
         return custermnumber;

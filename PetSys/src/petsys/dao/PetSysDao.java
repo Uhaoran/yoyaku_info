@@ -88,7 +88,30 @@ public class PetSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void loginPetSys (PetSysEntity entity){
+            try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
 
+           String sql="SELECT userid,password From custerm_info WHERE userid ='"+entity.getLoginId()+"','"+entity.getLoginPass()+"' ";
+	
+
+            System.out.println(sql);
+            stmt.executeQuery(sql);
+
+            stmt.close();
+            conn.close();
+
+        } catch (Exception ex) {
+            Logger.getLogger(PetSysDao.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+/**
+ * 全件検索
+ * @return 
+ */
     public List<PetSysEntity> selectPetSys() {
 
         List<PetSysEntity> list = new ArrayList<>();
