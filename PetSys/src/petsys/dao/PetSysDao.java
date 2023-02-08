@@ -30,6 +30,11 @@ public class PetSysDao {
     final String user = "postgres";
     final String password = "postgres";
 
+    
+    /**
+     * 新規作成
+     * @param entity 
+     */
     public void createPetSys(PetSysEntity entity) {
 
         try {
@@ -88,12 +93,18 @@ public class PetSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
+    /**
+     * ログイン
+     * @param entity 
+     */
     public void loginPetSys (PetSysEntity entity){
             try {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-           String sql="SELECT userid,password From custerm_info WHERE userid ='"+entity.getLoginId()+"','"+entity.getLoginPass()+"' ";
+           String sql="SELECT userid,password From custerm_info WHERE userid ='"+entity.getUserid()+"','"+entity.getUserpassword()+"' ";
 	
 
             System.out.println(sql);

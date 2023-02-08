@@ -30,6 +30,11 @@ public class YoyakuSysDao {
     final String user = "postgres";
     final String password = "postgres";
 
+    /**
+     * 予約する
+     *
+     * @param entity
+     */
     public void createYoyakuSys(YoyakuSysEntity entity) {
         try {
             conn = DriverManager.getConnection(url, user, password);
@@ -50,6 +55,11 @@ public class YoyakuSysDao {
         }
     }
 
+    /**
+     * 予約キャンセル
+     *
+     * @param entity
+     */
     public void deleteYoyakuSys(YoyakuSysEntity entity) {
         try {
             conn = DriverManager.getConnection(url, user, password);
@@ -69,6 +79,25 @@ public class YoyakuSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    public void changeYoyakuSys(YoyakuSysEntity entity) {
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
+
+            String sql = "UPDATE Yoyaku_list\n"
+                    + "SET checkin='" + entity.getCheckin() + "',times='" + entity.getTimes() + "',course='" + entity.getCourse() + "',pettype='" + entity.getPettype() + "' where userid=" + entity.getUserid() + ";";
+
+            stmt.executeUpdate(sql);
+
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(YoyakuSysDao.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public List<YoyakuSysEntity> selectYoyakuSys() {

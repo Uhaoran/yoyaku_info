@@ -29,23 +29,23 @@ public class PetSysEntity {
     private String petmedicalhistory;
     private String creationdate;
     private String updatingdate;
-    private String loginId;
-    private String loginPass;
+    private String men;
+    private String lady;
 
-    public String getLoginId() {
-        return userid;
+    public String getMen() {
+        return men;
     }
 
-    public void setLoginID(String loginId) {
-        this.loginId = userid;
+    public void setMen(String men) {
+        this.men = men;
     }
 
-    public String getLoginPass() {
-        return userpassword;
+    public String getLady() {
+        return lady;
     }
 
-    public void setLoginPass() {
-        this.loginPass = userpassword;
+    public void setLady() {
+        this.lady = lady;
     }
 
     public int getCustermnumber() {

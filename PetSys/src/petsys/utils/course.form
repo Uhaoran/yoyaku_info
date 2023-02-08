@@ -46,6 +46,11 @@
               </Group>
               <EmptySpace pref="368" max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="294" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="456" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -57,7 +62,9 @@
               <Component id="jScrollPane1" min="-2" pref="477" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="90" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace pref="110" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -204,6 +211,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6599;&#x91d1;&#x8868;&#x306b;&#x8f09;&#x305b;&#x3066;&#x306a;&#x3044;&#x72ac;&#x7a2e;&#x3042;&#x308b;&#x3044;&#x306f;&#x72ac;&#x4ee5;&#x5916;&#x306e;&#x30da;&#x30c3;&#x30c8;&#x306f;&#x96fb;&#x8a71;&#x3067;&#x306e;&#x3054;&#x5bfe;&#x5fdc;&#x306b;&#x306a;&#x308a;&#x307e;&#x3059;&#x306e;&#x3067;&#x3054;&#x4e86;&#x627f;&#x4e0b;&#x3055;&#x3044;&#x3002;"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x753b;&#x9762;&#x306b;&#x623b;&#x308b;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

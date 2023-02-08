@@ -13,7 +13,7 @@ public class PetSysDto {
 
     private int custermnumber;
     private String userid;
-    private String userpassword;
+    private String password;
     private String name;
     private String sex;
     private String born;
@@ -29,20 +29,20 @@ public class PetSysDto {
     private String petmedicalhistory;
     private String creationdate;
     private String updatingdate;
-    private String loginId;
-    private String loginPass;
+    private String men;
+    private String lady;
     
-    public String getLoginID(){
-        return userid;
+    public String getMen(){
+        return men;
     }
-    public void setLoginID(String loginId){
-        this.loginId=userid;
+    public void setMen(String men){
+        this.men=men;
     }
-    public String getLoginPass(){
-        return userpassword;
+    public String getLady(){
+        return lady;
     }
-    public void setLoginPass(){
-        this.loginPass=userpassword;
+    public void setLady(){
+        this.lady=lady;
     }
 
     public int getCustermnumber() {
@@ -54,7 +54,7 @@ public class PetSysDto {
     }
 
     public String getUserpassword() {
-        return userpassword;
+        return password;
     }
 
     public String getName() {
@@ -126,7 +126,7 @@ public class PetSysDto {
     }
 
     public void setUserpassword(String userpassword) {
-        this.userpassword = userpassword;
+        this.password = userpassword;
     }
 
     public void setName(String name) {
@@ -187,6 +187,10 @@ public class PetSysDto {
 
     public void setUpdatingdate(String updatingdate) {
         this.updatingdate = updatingdate;
+    }
+
+    public void setPassword(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
