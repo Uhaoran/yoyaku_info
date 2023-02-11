@@ -40,7 +40,7 @@ public class YoyakuSysDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO Yoyaku_list (userid,pettype,course,checkin,times,def_flag)\n"
+            String sql = "INSERT INTO yoyaku_list (userid,pettype,course,checkin,times,def_flag)\n"
                     + "VALUES('" + entity.getUserid() + "','" + entity.getPettype() + "','" + entity.getCourse() + "','" + entity.getCheckin() + "','" + entity.getTimes() + "','" + 0 + "')";
 
             System.out.println(sql);
@@ -65,7 +65,7 @@ public class YoyakuSysDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "UPDATE Yoyaku_list\n"
+            String sql = "UPDATE yoyaku_list\n"
                     + "SET def_flag='" + 1 + "';";
 
             System.out.println(sql);
@@ -81,12 +81,17 @@ public class YoyakuSysDao {
 
     }
 
+    /**
+     * 予約変更
+     *
+     * @param entity
+     */
     public void changeYoyakuSys(YoyakuSysEntity entity) {
         try {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "UPDATE Yoyaku_list\n"
+            String sql = "UPDATE yoyaku_list\n"
                     + "SET checkin='" + entity.getCheckin() + "',times='" + entity.getTimes() + "',course='" + entity.getCourse() + "',pettype='" + entity.getPettype() + "' where userid=" + entity.getUserid() + ";";
 
             stmt.executeUpdate(sql);
@@ -99,7 +104,10 @@ public class YoyakuSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+/**
+ * 全件検索
+ * @return 
+ */
     public List<YoyakuSysEntity> selectYoyakuSys() {
         List<YoyakuSysEntity> list = new ArrayList<>();
         try {
@@ -108,7 +116,7 @@ public class YoyakuSysDao {
 
             stmt = conn.createStatement();
 
-            String sql = "SELECT* FROM Yoyaku_list where def_flag='0';";
+            String sql = "SELECT* FROM yoyaku_list where def_flag='0';";
             rset = stmt.executeQuery(sql);
 
             if (rset != null) {
@@ -118,10 +126,10 @@ public class YoyakuSysDao {
                     YoyakuSysEntity entity = new YoyakuSysEntity();
 
                     entity.setUserid(rset.getString(1));
-                    entity.setPettype(rset.getString(2));
-                    entity.setCourse(rset.getString(3));
-                    entity.setCheckin(rset.getString(4));
-                    entity.setTimes(rset.getString(5));
+                    entity.setCheckin(rset.getString(2));
+                    entity.setTimes(rset.getString(3));
+                    entity.setCourse(rset.getString(4));
+                    entity.setPettype(rset.getString(5));
 
                     list.add(entity);
                 }
@@ -133,7 +141,7 @@ public class YoyakuSysDao {
             conn.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(PetSysDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(YoyakuSysDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return list;

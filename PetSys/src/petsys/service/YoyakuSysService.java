@@ -18,44 +18,73 @@ import petsys.entity.YoyakuSysEntity;
 public class YoyakuSysService {
 
     YoyakuSysDao yoyakuSysDao = new YoyakuSysDao();
-
+    /**
+     * 予約
+     * @param yoyakuSysDto 
+     */
     public void createYoyakuSys(YoyakuSysDto yoyakuSysDto) {
 
         System.out.println(yoyakuSysDto.getUserid());
-        System.out.println(yoyakuSysDto.getPettype());
-        System.out.println(yoyakuSysDto.getCourse());
         System.out.println(yoyakuSysDto.getCheckin());
         System.out.println(yoyakuSysDto.getTimes());
+        System.out.println(yoyakuSysDto.getCourse());
+        System.out.println(yoyakuSysDto.getPettype());
 
         YoyakuSysEntity entity = new YoyakuSysEntity();
 
         entity.setUserid(yoyakuSysDto.getUserid());
-        entity.setPettype(yoyakuSysDto.getPettype());
-        entity.setCourse(yoyakuSysDto.getCourse());
         entity.setCheckin(yoyakuSysDto.getCheckin());
         entity.setTimes(yoyakuSysDto.getTimes());
+        entity.setCourse(yoyakuSysDto.getCourse());
+        entity.setPettype(yoyakuSysDto.getPettype());
 
         yoyakuSysDao.createYoyakuSys(entity);
 
     }
-
+    /**
+     * 予約キャンセル
+     * @param yoyakuSysDto 
+     */
     public void deleteYoyakuSys(YoyakuSysDto yoyakuSysDto) {
 
         System.out.println(yoyakuSysDto.getUserid());
-        System.out.println(yoyakuSysDto.getPettype());
-        System.out.println(yoyakuSysDto.getCourse());
         System.out.println(yoyakuSysDto.getCheckin());
         System.out.println(yoyakuSysDto.getTimes());
+        System.out.println(yoyakuSysDto.getCourse());
+        System.out.println(yoyakuSysDto.getPettype());
 
         YoyakuSysEntity entity = new YoyakuSysEntity();
 
         entity.setUserid(yoyakuSysDto.getUserid());
-        entity.setPettype(yoyakuSysDto.getPettype());
-        entity.setCourse(yoyakuSysDto.getCourse());
         entity.setCheckin(yoyakuSysDto.getCheckin());
         entity.setTimes(yoyakuSysDto.getTimes());
+        entity.setCourse(yoyakuSysDto.getCourse());
+        entity.setPettype(yoyakuSysDto.getPettype());
 
         yoyakuSysDao.deleteYoyakuSys(entity);
+
+    }
+    /**
+     *  予約変更
+     * @param yoyakuSysDto 
+     */
+    public void changeYoyakuSys(YoyakuSysDto yoyakuSysDto) {
+
+        System.out.println(yoyakuSysDto.getUserid());
+        System.out.println(yoyakuSysDto.getCheckin());
+        System.out.println(yoyakuSysDto.getTimes());
+        System.out.println(yoyakuSysDto.getCourse());
+        System.out.println(yoyakuSysDto.getPettype());
+
+        YoyakuSysEntity entity = new YoyakuSysEntity();
+
+        entity.setUserid(yoyakuSysDto.getUserid());
+        entity.setCheckin(yoyakuSysDto.getCheckin());
+        entity.setTimes(yoyakuSysDto.getTimes());
+        entity.setCourse(yoyakuSysDto.getCourse());
+        entity.setPettype(yoyakuSysDto.getPettype());
+
+        yoyakuSysDao.changeYoyakuSys(entity);
 
     }
 
@@ -68,10 +97,10 @@ public class YoyakuSysService {
             YoyakuSysDto d = new YoyakuSysDto();
 
             d.setUserid(e.getUserid());
-            d.setPettype(e.getPettype());
-            d.setCourse(e.getCourse());
             d.setCheckin(e.getCheckin());
             d.setTimes(e.getTimes());
+            d.setCourse(e.getCourse());
+            d.setPettype(e.getPettype());
 
             dto.add(d);
         }

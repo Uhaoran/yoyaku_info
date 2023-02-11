@@ -96,6 +96,11 @@ public class Yoyaku extends javax.swing.JFrame {
         jLabel6.setText("多頭同時予約には一度電話での確認してください。03-9999-9999");
 
         jButton5.setText("予約変更");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("予約キャンセル");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -238,32 +243,53 @@ public class Yoyaku extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+    /**
+     * 予約
+     */
         YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
 
         yoyakuSysDto.setUserid(userid.getText());
-        yoyakuSysDto.setPettype(pettype.getText());
-        yoyakuSysDto.setCourse(course.getText());
         yoyakuSysDto.setCheckin(checkin.getText());
         yoyakuSysDto.setTimes(times.getText());
+        yoyakuSysDto.setCourse(course.getText());
+        yoyakuSysDto.setPettype(pettype.getText());
 
         yoyakuSysService.createYoyakuSys(yoyakuSysDto);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        /*
+        予約キャンセル
+        */
         YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
 
         yoyakuSysDto.setUserid(userid.getText());
-        yoyakuSysDto.setPettype(pettype.getText());
-        yoyakuSysDto.setCourse(course.getText());
         yoyakuSysDto.setCheckin(checkin.getText());
         yoyakuSysDto.setTimes(times.getText());
+        yoyakuSysDto.setCourse(course.getText());
+        yoyakuSysDto.setPettype(pettype.getText());
 
         yoyakuSysService.deleteYoyakuSys(yoyakuSysDto);
 
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        /*
+        予約変更
+        */
+        YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
+
+        yoyakuSysDto.setUserid(userid.getText());
+        yoyakuSysDto.setCheckin(checkin.getText());
+        yoyakuSysDto.setTimes(times.getText());
+        yoyakuSysDto.setCourse(course.getText());
+        yoyakuSysDto.setPettype(pettype.getText());
+
+        yoyakuSysService.changeYoyakuSys(yoyakuSysDto);
+
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
