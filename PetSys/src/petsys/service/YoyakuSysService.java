@@ -87,7 +87,10 @@ public class YoyakuSysService {
         yoyakuSysDao.changeYoyakuSys(entity);
 
     }
-
+/**
+ * 予約全件検索
+ * @return 
+ */
     public List<YoyakuSysDto> selectAll() {
         List<YoyakuSysEntity> list = yoyakuSysDao.selectYoyakuSys();
 
@@ -95,7 +98,7 @@ public class YoyakuSysService {
         for (YoyakuSysEntity e : list) {
 
             YoyakuSysDto d = new YoyakuSysDto();
-
+            
             d.setUserid(e.getUserid());
             d.setCheckin(e.getCheckin());
             d.setTimes(e.getTimes());

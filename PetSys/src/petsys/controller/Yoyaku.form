@@ -53,19 +53,18 @@
                   <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel6" min="-2" pref="520" max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" pref="376" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="0" min="-2" pref="376" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="295" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="218" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="jButton5" min="-2" pref="218" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="218" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" pref="210" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
@@ -96,6 +95,11 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jButton3" min="-2" pref="210" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jLabel8" min="-2" pref="231" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -139,10 +143,11 @@
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" pref="19" max="-2" attributes="0"/>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
-                      <Component id="jButton5" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="jButton2" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -222,20 +227,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x591a;&#x982d;&#x540c;&#x6642;&#x4e88;&#x7d04;&#x306b;&#x306f;&#x4e00;&#x5ea6;&#x96fb;&#x8a71;&#x3067;&#x306e;&#x78ba;&#x8a8d;&#x3057;&#x3066;&#x304f;&#x3060;&#x3055;&#x3044;&#x3002;03-9999-9999"/>
+            <Property name="text" type="java.lang.String" value="&#x591a;&#x982d;&#x540c;&#x6642;&#x4e88;&#x7d04;&#x306b;&#x306f;&#x4e00;&#x5ea6;&#x96fb;&#x8a71;&#x3067;&#x306e;&#x78ba;&#x8a8d;&#x3057;&#x3066;&#x304f;&#x3060;&#x3055;&#x3044;&#x3002;"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x5909;&#x66f4;"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x30ad;&#x30e3;&#x30f3;&#x30bb;&#x30eb;&#x306e;&#x5834;&#x5408;&#x304a;&#x5e97;&#x306b;&#x96fb;&#x8a71;&#x3067;&#x9023;&#x7d61;&#x304f;&#x3060;&#x3055;&#x3044;"/>
+            <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x30ad;&#x30e3;&#x30f3;&#x30bb;&#x30eb;&#x30fb;&#x5909;&#x66f4;&#x306e;&#x5834;&#x5408;&#x304a;&#x5e97;&#x306b;&#x96fb;&#x8a71;&#x3067;&#x9023;&#x7d61;&#x304f;&#x3060;&#x3055;&#x3044;&#x3002;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TEL&#x3000;03-9999-9999"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -66,7 +66,7 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "UPDATE yoyaku_list\n"
-                    + "SET def_flag='" + 0+ "';";
+                    + "SET def_flag='" + 0 + "';";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -92,7 +92,7 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "UPDATE yoyaku_list\n"
-                    + "SET checkin='" + entity.getCheckin() + "',times='" + entity.getTimes() + "',course='" + entity.getCourse() + "',pettype='" + entity.getPettype() + "' where userid=" + entity.getUserid() + ";";
+                    + "SET pettype='" + entity.getPettype() + "',course='" + entity.getCourse() + "',checkin='" + entity.getCheckin() + "', times='" + entity.getTimes() + "';";
 
             stmt.executeUpdate(sql);
 
@@ -104,10 +104,10 @@ public class YoyakuSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
-/**
- * 全件検索
- * @return 
- */
+    /*
+     全件検索
+     */
+
     public List<YoyakuSysEntity> selectYoyakuSys() {
         List<YoyakuSysEntity> list = new ArrayList<>();
         try {

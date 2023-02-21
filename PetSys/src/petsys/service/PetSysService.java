@@ -7,6 +7,7 @@ package petsys.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import petsys.controller.Yoyaku;
 import petsys.dao.PetSysDao;
 import petsys.dto.PetSysDto;
 import petsys.entity.PetSysEntity;
@@ -18,7 +19,13 @@ import petsys.entity.PetSysEntity;
 public class PetSysService {
 
     PetSysDao petSysDao = new PetSysDao();
+    PetSysEntity entity = new PetSysEntity();
 
+    /**
+     * 新規登録
+     *
+     * @param petSysDto
+     */
     public void createPetSys(PetSysDto petSysDto) {
 
         System.out.println(petSysDto.getCustermnumber());
@@ -39,8 +46,6 @@ public class PetSysService {
         System.out.println(petSysDto.getPetmedicalhistory());
         System.out.println(petSysDto.getCreationdate());
         System.out.println(petSysDto.getUpdatingdate());
-
-        PetSysEntity entity = new PetSysEntity();
 
         entity.setCustermnunmber(petSysDto.getCustermnumber());
         entity.setUserid(petSysDto.getUserid());
@@ -65,10 +70,36 @@ public class PetSysService {
 
     }
 
+    /**
+     * ログイン
+     *
+     * @param petSysDto
+     */
     public void loginPetSys(PetSysDto petSysDto) {
+
+        String userid = petSysDto.getUserid();
+        String userpassword = String.valueOf(petSysDto.getUserpassword());
+
+        if (userid.equals("123") && userpassword.equals("123")) {
+            System.out.print("登録出来ました");
+
+            /**
+             * 予約画面に遷移
+             */
+            Yoyaku ｙ = new Yoyaku();
+            ｙ.setVisible(true);
+
+        } else {
+            System.out.print("IDまたパスワードが違います");
+        }
 
     }
 
+    /**
+     * 全件検索
+     *
+     * @return
+     */
     public List<PetSysDto> selectAll() {
 
         List<PetSysEntity> list = petSysDao.selectPetSys();

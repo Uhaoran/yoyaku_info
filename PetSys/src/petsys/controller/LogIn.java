@@ -15,7 +15,8 @@ import petsys.service.PetSysService;
  */
 public class LogIn extends javax.swing.JFrame {
 
-     PetSysService petSysService = new PetSysService();
+    PetSysService petSysService = new PetSysService();
+
     /**
      * Creates new form NewJFrame
      */
@@ -36,7 +37,7 @@ public class LogIn extends javax.swing.JFrame {
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        userID = new javax.swing.JTextField();
+        userid = new javax.swing.JTextField();
         userpassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -49,9 +50,9 @@ public class LogIn extends javax.swing.JFrame {
 
         jLabel5.setText("パスワード");
 
-        userID.addActionListener(new java.awt.event.ActionListener() {
+        userid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userIDActionPerformed(evt);
+                useridActionPerformed(evt);
             }
         });
 
@@ -88,7 +89,7 @@ public class LogIn extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addGap(59, 59, 59)
                         .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(userID)
+                            .addComponent(userid)
                             .addComponent(userpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)))
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,7 +103,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(userID, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -111,7 +112,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,38 +142,34 @@ public class LogIn extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         /**
          * ログイン
-         */  
+         */
         PetSysDto petSysDto = new PetSysDto();
-        
-        petSysDto.setUserid(userID.getText());
+
+        petSysDto.setUserid(userid.getText());
         petSysDto.setUserpassword(userpassword.getText());
-        
 
         petSysService.loginPetSys(petSysDto);
         
-        /**
-         * 予約画面に遷移
-         */
-        Yoyaku ｙ = new Yoyaku();
-        ｙ.setVisible(true);
-        
-        
+
+      
+   
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      /**
-       * 新規登録入力画面に遷移
-       */
+        /**
+         * 新規登録入力画面に遷移
+         */
         Creat c = new Creat();
         c.setVisible(true);
-       
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void userIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDActionPerformed
+    private void useridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useridActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userIDActionPerformed
+    }//GEN-LAST:event_useridActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,10 +214,8 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JTextField userID;
+    private javax.swing.JTextField userid;
     private javax.swing.JTextField userpassword;
     // End of variables declaration//GEN-END:variables
 
-
-    }
-
+}

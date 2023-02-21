@@ -94,8 +94,7 @@ public class PetSysDao {
         }
     }
     
-    
-    /**
+        /**
      * ログイン
      * @param entity 
      */
@@ -105,8 +104,9 @@ public class PetSysDao {
             stmt = conn.createStatement();
 
            String sql="SELECT userid,password From custerm_info WHERE userid ='"+entity.getUserid()+"','"+entity.getUserpassword()+"' ";
+           
+           
 	
-
             System.out.println(sql);
             stmt.executeQuery(sql);
 
