@@ -30,10 +30,10 @@ public class PetSysDao {
     final String user = "postgres";
     final String password = "postgres";
 
-    
     /**
      * 新規作成
-     * @param entity 
+     *
+     * @param entity
      */
     public void createPetSys(PetSysEntity entity) {
 
@@ -41,46 +41,46 @@ public class PetSysDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = 	"INSERT "
-	+ "INTO custerm_info( "
-	+ "    userid "
-	+ "    , userpassword "
-	+ "    , name "
-	+ "    , sex "
-	+ "    , born "
-	+ "    , address "
-	+ "    , tel "
-	+ "    , email "
-	+ "    , pettype "
-	+ "    , multiheaded "
-	+ "    , petname "
-	+ "    , petborn "
-	+ "    , petsex "
-	+ "    , vaccinationdate "
-	+ "    , petmedicalhistory "
-	+ "    , del_flag "
-	+ "    , creationdate "
-	+ "    , updatingdate "
-	+ ") "
-	+ "VALUES ( "
-	+ "    '"+entity.getUserid()+"' "
-	+ "    , '"+entity.getUserpassword()+"' "
-	+ "    , '"+ entity.getName()+"' "
-	+ "    , '"+entity.getSex()+"' "
-	+ "    , '"+entity.getBorn()+"' "
-	+ "    ,'"+entity.getAddress()+"' "
-	+ "    ,'"+entity.getTel()+"' "
-	+ "    ,'"+entity.getEmail()+" ' "
-	+ "    ,'"+ entity.getPettype()+"' "
-	+ "    ,'"+entity.getMultiheaded()+"' "
-	+ "    ,'"+entity.getPetname()+"' "
-	+ "    ,'"+entity.getPetborn()+"' "
-	+ "    ,'"+entity.getPetsex()+" ' "
-	+ "    ,'"+entity.getVaccintiondate()+"' "
-	+ "    ,'"+entity.getPetmedicalhistory()+"' "
-	+ "    ,'"+0+"' "
-	+ "    ,'"+entity.getCreationdate()+"' "
-	+ "    ,'"+entity.getUpdatingdate()+"'); ";
+            String sql = "INSERT "
+                    + "INTO custerm_info( "
+                    + "    userid "
+                    + "    , password "
+                    + "    , name "
+                    + "    , sex "
+                    + "    , born "
+                    + "    , address "
+                    + "    , tel "
+                    + "    , email "
+                    + "    , pettype "
+                    + "    , multiheaded "
+                    + "    , petname "
+                    + "    , petborn "
+                    + "    , petsex "
+                    + "    , vaccinationdate "
+                    + "    , petmedicalhistory "
+                    + "    , del_flag "
+                    + "    , creationdate "
+                    + "    , updatingdate "
+                    + ") "
+                    + "VALUES ( "
+                    + "    '" + entity.getUserid() + "' "
+                    + "    , '" + entity.getPassword() + "' "
+                    + "    , '" + entity.getName() + "' "
+                    + "    , '" + entity.getSex() + "' "
+                    + "    , '" + entity.getBorn() + "' "
+                    + "    ,'" + entity.getAddress() + "' "
+                    + "    ,'" + entity.getTel() + "' "
+                    + "    ,'" + entity.getEmail() + " ' "
+                    + "    ,'" + entity.getPettype() + "' "
+                    + "    ,'" + entity.getMultiheaded() + "' "
+                    + "    ,'" + entity.getPetname() + "' "
+                    + "    ,'" + entity.getPetborn() + "' "
+                    + "    ,'" + entity.getPetsex() + " ' "
+                    + "    ,'" + entity.getVaccintiondate() + "' "
+                    + "    ,'" + entity.getPetmedicalhistory() + "' "
+                    + "    ,'" + 0 + "' "
+                    + "    ,'" + entity.getCreationdate() + "' "
+                    + "    ,'" + entity.getUpdatingdate() + "'); ";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -93,20 +93,56 @@ public class PetSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-        /**
-     * ログイン
-     * @param entity 
+
+    /**
+     * お客様情報変更
+     *
+     * @param entity
      */
-    public void loginPetSys (PetSysEntity entity){
-            try {
+    public void changePetSys(PetSysEntity entity) {
+        try {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-           String sql="SELECT userid,password From custerm_info WHERE userid ='"+entity.getUserid()+"','"+entity.getUserpassword()+"' ";
-           
-           
-	
+            String sql = "UPDATE custerm_info\n"
+                    + "SET userid='" + entity.getUserid() + "',\n"
+                    + "password='" + entity.getPassword() + "',\n"
+                    + "name='" + entity.getName() + "',\n"
+                    + "sex='" + entity.getSex() + "',\n"
+                    + "born='" + entity.getBorn() + "',\n"
+                    + "address='" + entity.getAddress() + "',\n"
+                    + "tel='" + entity.getTel() + "',\n"
+                    + "email='" + entity.getEmail() + "',\n"
+                    + "pettype='" + entity.getPettype() + "',\n"
+                    + "multiheaded='" + entity.getMultiheaded() + "',\n"
+                    + "petname='" + entity.getPetname() + "',\n"
+                    + "petborn='" + entity.getPetborn() + "',\n"
+                    + "petsex='" + entity.getPetsex() + "',\n"
+                    + "vaccinationdate='" + entity.getVaccintiondate() + "',\n"
+                    + "petmedicalhistory='" + entity.getPetmedicalhistory() + "';";
+            stmt.executeUpdate(sql);
+
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PetSysDao.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * ログイン
+     *
+     * @param entity
+     */
+    public void loginPetSys(PetSysEntity entity) {
+        try {
+            conn = DriverManager.getConnection(url, user, password);
+            stmt = conn.createStatement();
+
+            String sql = "SELECT userid,password From custerm_info WHERE userid ='" + entity.getUserid() + "','" + entity.getPassword() + "' ";
+
             System.out.println(sql);
             stmt.executeQuery(sql);
 
@@ -118,11 +154,12 @@ public class PetSysDao {
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-/**
- * 全件検索
- * @return 
- */
+
+    /**
+     * 全件検索
+     *
+     * @return
+     */
     public List<PetSysEntity> selectPetSys() {
 
         List<PetSysEntity> list = new ArrayList<>();
@@ -144,7 +181,7 @@ public class PetSysDao {
 
                     entity.setCustermnunmber(rset.getInt(1));
                     entity.setUserid(rset.getString(2));
-                    entity.setUserpassword(rset.getString(3));
+                    entity.setPassword(rset.getString(3));
                     entity.setName(rset.getString(4));
                     entity.setSex(rset.getString(5));
                     entity.setBorn(rset.getString(6));
@@ -175,5 +212,5 @@ public class PetSysDao {
         return list;
 
     }
-    
+
 }

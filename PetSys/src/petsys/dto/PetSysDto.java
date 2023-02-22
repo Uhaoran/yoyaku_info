@@ -53,7 +53,7 @@ public class PetSysDto {
         return userid;
     }
 
-    public String getUserpassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -125,8 +125,8 @@ public class PetSysDto {
         this.userid = userid;
     }
 
-    public void setUserpassword(String userpassword) {
-        this.password = userpassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setName(String name) {
@@ -189,8 +189,6 @@ public class PetSysDto {
         this.updatingdate = updatingdate;
     }
 
-    public void setPassword(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 }

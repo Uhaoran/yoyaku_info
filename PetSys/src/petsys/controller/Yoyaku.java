@@ -55,12 +55,16 @@ public class Yoyaku extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jLabel1.setText("予約日");
 
+        jLabel2.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jLabel2.setText("予約時間");
 
+        jLabel3.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jLabel3.setText("ユーザーID");
 
+        jButton1.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jButton1.setText("予約する");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +72,7 @@ public class Yoyaku extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jButton2.setText("コース料金一覧");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +80,7 @@ public class Yoyaku extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jButton3.setText("予約状況確認");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,10 +88,13 @@ public class Yoyaku extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jLabel4.setText("コース");
 
+        jLabel5.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jLabel5.setText("犬種");
 
+        jButton4.setFont(new java.awt.Font("Meiryo UI", 0, 18)); // NOI18N
         jButton4.setText("閉じる");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,10 +102,13 @@ public class Yoyaku extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
         jLabel6.setText("多頭同時予約には一度電話での確認してください。");
 
+        jLabel7.setForeground(new java.awt.Color(255, 51, 51));
         jLabel7.setText("予約キャンセル・変更の場合お店に電話で連絡ください。");
 
+        jLabel8.setForeground(new java.awt.Color(255, 51, 51));
         jLabel8.setText("TEL　03-9999-9999");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -108,7 +120,7 @@ public class Yoyaku extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -133,9 +145,9 @@ public class Yoyaku extends javax.swing.JFrame {
                             .addComponent(course)
                             .addComponent(userid)
                             .addComponent(pettype, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))))
-                .addGap(135, 135, 135)
+                .addGap(138, 138, 138)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(26, 26, 26))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,7 +167,7 @@ public class Yoyaku extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addContainerGap()
                         .addComponent(jButton4)))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +191,7 @@ public class Yoyaku extends javax.swing.JFrame {
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -192,17 +204,17 @@ public class Yoyaku extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(118, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(51, 51, 51)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(126, 126, 126))
+                .addGap(121, 121, 121))
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("予約");

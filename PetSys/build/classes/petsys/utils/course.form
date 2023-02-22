@@ -31,25 +31,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="702" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="1134" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="187" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace pref="368" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="294" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="456" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,168 +40,217 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="38" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="477" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="69" max="-2" attributes="0"/>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
+    <Container class="javax.swing.JPanel" name="jPanel1">
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" min="-2" pref="1134" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="277" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" pref="702" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="81" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="294" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="46" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="477" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="69" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Meiryo UI" size="12" style="0"/>
+                </Property>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="3" rowCount="29">
+                    <Column editable="true" title="&#x72ac;&#x7a2e;" type="java.lang.Object">
+                      <Data value="&#x30c1;&#x30ef;&#x30ef; S"/>
+                      <Data value="&#x30c1;&#x30ef;&#x30ef; L"/>
+                      <Data value="&#x30c0;&#x30c3;&#x30af;&#x30b9; S"/>
+                      <Data value="&#x30c0;&#x30c3;&#x30af;&#x30b9; L"/>
+                      <Data value="&#x30d1;&#x30b0;"/>
+                      <Data value="&#x30df;&#x30cb;&#x30d4;&#x30f3;"/>
+                      <Data value="&#x30a4;&#x30bf;&#x30b0;&#x30ec;"/>
+                      <Data value="&#x30b8;&#x30e3;&#x30c3;&#x30af;&#x30e9;&#x30c3;&#x30bb;&#x30eb;"/>
+                      <Data value="&#x30d1;&#x30d4;&#x30e8;&#x30f3;"/>
+                      <Data value="&#x30e8;&#x30fc;&#x30ad;&#x30fc;"/>
+                      <Data value="&#x30dd;&#x30e1;&#x30e9;&#x30cb;&#x30a2;&#x30f3;"/>
+                      <Data value="&#x30de;&#x30eb;&#x30c1;&#x30fc;&#x30ba;"/>
+                      <Data value="&#x30da;&#x30ad;&#x30cb;&#x30fc;&#x30ba;"/>
+                      <Data value="&#x30b7;&#x30fc;&#x30ba;&#x30fc;"/>
+                      <Data value="T &#x30d7;&#x30fc;&#x30c9;&#x30eb; 2kg &#x307e;&#x3067;"/>
+                      <Data value="T &#x30d7;&#x30fc;&#x30c9;&#x30eb;"/>
+                      <Data value="M &#x30d7;&#x30fc;&#x30c9;&#x30eb;"/>
+                      <Data value="M &#x30b7;&#x30e5;&#x30ca;"/>
+                      <Data value="&#x30a6;&#x30a8;&#x30b9;&#x30c6;&#x30a3;&#x30fc;"/>
+                      <Data value="&#x30d3;&#x30b7;&#x30e7;&#x30f3;&#x30d5;&#x30ea;&#x30fc;&#x30bc;"/>
+                      <Data value="&#x30d3;&#x30fc;&#x30b0;&#x30eb;"/>
+                      <Data value="E &#x30b3;&#x30c3;&#x30ab;&#x30fc;"/>
+                      <Data value="A &#x30b3;&#x30c3;&#x30ab;&#x30fc;"/>
+                      <Data value="&#x30b7;&#x30a7;&#x30eb;&#x30c6;&#x30a3;&#x30fc;"/>
+                      <Data value="&#x65e5;&#x672c;&#x30b9;&#x30d4;&#x30c3;&#x30c4;"/>
+                      <Data value="&#x67f4;&#x72ac; 11kg &#x307e;&#x3067;"/>
+                      <Data value="&#x30b3;&#x30fc;&#x30ae;&#x30fc;"/>
+                      <Data value="&#x30e9;&#x30d6;&#x30e9;&#x30c9;&#x30fc;&#x30eb;"/>
+                      <Data value="&#x30b4;&#x30fc;&#x30eb;&#x30c7;&#x30f3;&#x30ec;&#x30c8;&#x30ea;&#x30d0;&#x30fc;"/>
+                    </Column>
+                    <Column editable="true" title="&#x30b7;&#x30e3;&#x30f3;&#x30d7;&#x30fc;&#x30b3;&#x30fc;&#x30b9;" type="java.lang.Object">
+                      <Data value="4730"/>
+                      <Data value="5280"/>
+                      <Data value="4730"/>
+                      <Data value="5280"/>
+                      <Data value="4950"/>
+                      <Data value="4620"/>
+                      <Data value="4620"/>
+                      <Data value="5500"/>
+                      <Data value="5500"/>
+                      <Data value="5500"/>
+                      <Data value="5500"/>
+                      <Data value="5500"/>
+                      <Data value="5720"/>
+                      <Data value="5720"/>
+                      <Data value="5500"/>
+                      <Data value="6050"/>
+                      <Data value="7700"/>
+                      <Data value="6050"/>
+                      <Data value="6050"/>
+                      <Data value="6050"/>
+                      <Data value="6600"/>
+                      <Data value="7920"/>
+                      <Data value="7920"/>
+                      <Data value="8250"/>
+                      <Data value="7920"/>
+                      <Data value="7700"/>
+                      <Data value="7700"/>
+                      <Data value="11000"/>
+                      <Data value="16500"/>
+                    </Column>
+                    <Column editable="true" title="&#x30b7;&#x30e3;&#x30f3;&#x30d7;&#x30ab;&#x30c3;&#x30c8;&#x30b3;&#x30fc;&#x30b9;" type="java.lang.Object">
+                      <Data value="null"/>
+                      <Data value="7150"/>
+                      <Data value=""/>
+                      <Data value="7150"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="null"/>
+                      <Data value="7920"/>
+                      <Data value="7920"/>
+                      <Data value="79220"/>
+                      <Data value="8580"/>
+                      <Data value="8580"/>
+                      <Data value="8580"/>
+                      <Data value="9130"/>
+                      <Data value="8800"/>
+                      <Data value="9130"/>
+                      <Data value="10000"/>
+                      <Data value="9350"/>
+                      <Data value="9350"/>
+                      <Data value="9350"/>
+                      <Data value="null"/>
+                      <Data value="11000"/>
+                      <Data value="11000"/>
+                      <Data value="12000"/>
+                      <Data value="11000"/>
+                      <Data value="12700"/>
+                      <Data value="12700"/>
+                      <Data value="17000"/>
+                      <Data value="null"/>
+                    </Column>
+                  </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="29">
-                <Column editable="true" title="&#x72ac;&#x7a2e;" type="java.lang.Object">
-                  <Data value="&#x30c1;&#x30ef;&#x30ef; S"/>
-                  <Data value="&#x30c1;&#x30ef;&#x30ef; L"/>
-                  <Data value="&#x30c0;&#x30c3;&#x30af;&#x30b9; S"/>
-                  <Data value="&#x30c0;&#x30c3;&#x30af;&#x30b9; L"/>
-                  <Data value="&#x30d1;&#x30b0;"/>
-                  <Data value="&#x30df;&#x30cb;&#x30d4;&#x30f3;"/>
-                  <Data value="&#x30a4;&#x30bf;&#x30b0;&#x30ec;"/>
-                  <Data value="&#x30b8;&#x30e3;&#x30c3;&#x30af;&#x30e9;&#x30c3;&#x30bb;&#x30eb;"/>
-                  <Data value="&#x30d1;&#x30d4;&#x30e8;&#x30f3;"/>
-                  <Data value="&#x30e8;&#x30fc;&#x30ad;&#x30fc;"/>
-                  <Data value="&#x30dd;&#x30e1;&#x30e9;&#x30cb;&#x30a2;&#x30f3;"/>
-                  <Data value="&#x30de;&#x30eb;&#x30c1;&#x30fc;&#x30ba;"/>
-                  <Data value="&#x30da;&#x30ad;&#x30cb;&#x30fc;&#x30ba;"/>
-                  <Data value="&#x30b7;&#x30fc;&#x30ba;&#x30fc;"/>
-                  <Data value="T &#x30d7;&#x30fc;&#x30c9;&#x30eb; 2kg &#x307e;&#x3067;"/>
-                  <Data value="T &#x30d7;&#x30fc;&#x30c9;&#x30eb;"/>
-                  <Data value="M &#x30d7;&#x30fc;&#x30c9;&#x30eb;"/>
-                  <Data value="M &#x30b7;&#x30e5;&#x30ca;"/>
-                  <Data value="&#x30a6;&#x30a8;&#x30b9;&#x30c6;&#x30a3;&#x30fc;"/>
-                  <Data value="&#x30d3;&#x30b7;&#x30e7;&#x30f3;&#x30d5;&#x30ea;&#x30fc;&#x30bc;"/>
-                  <Data value="&#x30d3;&#x30fc;&#x30b0;&#x30eb;"/>
-                  <Data value="E &#x30b3;&#x30c3;&#x30ab;&#x30fc;"/>
-                  <Data value="A &#x30b3;&#x30c3;&#x30ab;&#x30fc;"/>
-                  <Data value="&#x30b7;&#x30a7;&#x30eb;&#x30c6;&#x30a3;&#x30fc;"/>
-                  <Data value="&#x65e5;&#x672c;&#x30b9;&#x30d4;&#x30c3;&#x30c4;"/>
-                  <Data value="&#x67f4;&#x72ac; 11kg &#x307e;&#x3067;"/>
-                  <Data value="&#x30b3;&#x30fc;&#x30ae;&#x30fc;"/>
-                  <Data value="&#x30e9;&#x30d6;&#x30e9;&#x30c9;&#x30fc;&#x30eb;"/>
-                  <Data value="&#x30b4;&#x30fc;&#x30eb;&#x30c7;&#x30f3;&#x30ec;&#x30c8;&#x30ea;&#x30d0;&#x30fc;"/>
-                </Column>
-                <Column editable="true" title="&#x30b7;&#x30e3;&#x30f3;&#x30d7;&#x30fc;&#x30b3;&#x30fc;&#x30b9;" type="java.lang.Object">
-                  <Data value="4730"/>
-                  <Data value="5280"/>
-                  <Data value="4730"/>
-                  <Data value="5280"/>
-                  <Data value="4950"/>
-                  <Data value="4620"/>
-                  <Data value="4620"/>
-                  <Data value="5500"/>
-                  <Data value="5500"/>
-                  <Data value="5500"/>
-                  <Data value="5500"/>
-                  <Data value="5500"/>
-                  <Data value="5720"/>
-                  <Data value="5720"/>
-                  <Data value="5500"/>
-                  <Data value="6050"/>
-                  <Data value="7700"/>
-                  <Data value="6050"/>
-                  <Data value="6050"/>
-                  <Data value="6050"/>
-                  <Data value="6600"/>
-                  <Data value="7920"/>
-                  <Data value="7920"/>
-                  <Data value="8250"/>
-                  <Data value="7920"/>
-                  <Data value="7700"/>
-                  <Data value="7700"/>
-                  <Data value="11000"/>
-                  <Data value="16500"/>
-                </Column>
-                <Column editable="true" title="&#x30b7;&#x30e3;&#x30f3;&#x30d7;&#x30ab;&#x30c3;&#x30c8;&#x30b3;&#x30fc;&#x30b9;" type="java.lang.Object">
-                  <Data value="null"/>
-                  <Data value="7150"/>
-                  <Data value=""/>
-                  <Data value="7150"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="null"/>
-                  <Data value="7920"/>
-                  <Data value="7920"/>
-                  <Data value="79220"/>
-                  <Data value="8580"/>
-                  <Data value="8580"/>
-                  <Data value="8580"/>
-                  <Data value="9130"/>
-                  <Data value="8800"/>
-                  <Data value="9130"/>
-                  <Data value="10000"/>
-                  <Data value="9350"/>
-                  <Data value="9350"/>
-                  <Data value="9350"/>
-                  <Data value="null"/>
-                  <Data value="11000"/>
-                  <Data value="11000"/>
-                  <Data value="12000"/>
-                  <Data value="11000"/>
-                  <Data value="12700"/>
-                  <Data value="12700"/>
-                  <Data value="17000"/>
-                  <Data value="null"/>
-                </Column>
-              </Table>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Meiryo UI" size="14" style="0"/>
             </Property>
-            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-              <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
-              </TableColumnModel>
-            </Property>
-            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-            </Property>
+            <Property name="text" type="java.lang.String" value="&#x30c8;&#x30ea;&#x30df;&#x30f3;&#x30b0;&#x6599;&#x91d1;(&#x7a0e;&#x8fbc;&#x307f;)"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Meiryo UI" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="33" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#x6599;&#x91d1;&#x8868;&#x306b;&#x8f09;&#x305b;&#x3066;&#x306a;&#x3044;&#x72ac;&#x7a2e;&#x3042;&#x308b;&#x3044;&#x306f;&#x72ac;&#x4ee5;&#x5916;&#x306e;&#x30da;&#x30c3;&#x30c8;&#x306f;&#x96fb;&#x8a71;&#x3067;&#x306e;&#x3054;&#x5bfe;&#x5fdc;&#x306b;&#x306a;&#x308a;&#x307e;&#x3059;&#x306e;&#x3067;&#x3054;&#x4e86;&#x627f;&#x4e0b;&#x3055;&#x3044;&#x3002;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Meiryo UI" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x753b;&#x9762;&#x306b;&#x623b;&#x308b;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x30c8;&#x30ea;&#x30df;&#x30f3;&#x30b0;&#x6599;&#x91d1;(&#x7a0e;&#x8fbc;&#x307f;)"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x6599;&#x91d1;&#x8868;&#x306b;&#x8f09;&#x305b;&#x3066;&#x306a;&#x3044;&#x72ac;&#x7a2e;&#x3042;&#x308b;&#x3044;&#x306f;&#x72ac;&#x4ee5;&#x5916;&#x306e;&#x30da;&#x30c3;&#x30c8;&#x306f;&#x96fb;&#x8a71;&#x3067;&#x306e;&#x3054;&#x5bfe;&#x5fdc;&#x306b;&#x306a;&#x308a;&#x307e;&#x3059;&#x306e;&#x3067;&#x3054;&#x4e86;&#x627f;&#x4e0b;&#x3055;&#x3044;&#x3002;"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#x4e88;&#x7d04;&#x753b;&#x9762;&#x306b;&#x623b;&#x308b;"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

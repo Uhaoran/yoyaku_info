@@ -92,7 +92,10 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "UPDATE yoyaku_list\n"
-                    + "SET pettype='" + entity.getPettype() + "',course='" + entity.getCourse() + "',checkin='" + entity.getCheckin() + "', times='" + entity.getTimes() + "';";
+                    + "SET pettype='" + entity.getPettype() + "',"
+                    + "course='" + entity.getCourse() + "',"
+                    + "checkin='" + entity.getCheckin() + "',"
+                    + "times='" + entity.getTimes() + "';";
 
             stmt.executeUpdate(sql);
 

@@ -13,7 +13,7 @@ public class PetSysEntity {
 
     private int custermnumber;
     private String userid;
-    private String userpassword;
+    private String password;
     private String name;
     private String sex;
     private String born;
@@ -56,8 +56,8 @@ public class PetSysEntity {
         return userid;
     }
 
-    public String getUserpassword() {
-        return userpassword;
+    public String getPassword() {
+        return password;
     }
 
     public String getName() {
@@ -128,8 +128,8 @@ public class PetSysEntity {
         this.userid = userid;
     }
 
-    public void setUserpassword(String userpassword) {
-        this.userpassword = userpassword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setName(String name) {
