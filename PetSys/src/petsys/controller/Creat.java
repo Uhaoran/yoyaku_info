@@ -5,8 +5,8 @@
  */
 package petsys.controller;
 
-import petsys.dto.PetSysDto;
-import petsys.service.PetSysService;
+import petsys.dto.CustermSysDto;
+import petsys.service.CustermSysService;
 
 /**
  *
@@ -14,7 +14,7 @@ import petsys.service.PetSysService;
  */
 public class Creat extends javax.swing.JFrame {
 
-    PetSysService petSysService = new PetSysService();
+    CustermSysService petSysService = new CustermSysService();
 
     /**
      * Creates new form Creat
@@ -396,7 +396,7 @@ public class Creat extends javax.swing.JFrame {
          * *
          * ユーザー新規作成
          */
-        PetSysDto petSysDto = new PetSysDto();
+        CustermSysDto petSysDto = new CustermSysDto();
 
         petSysDto.setUserid(userid.getText());
         petSysDto.setPassword(password.getText());
@@ -443,7 +443,7 @@ public class Creat extends javax.swing.JFrame {
          * *
          *お客様情報変更
          */
-        PetSysDto petSysDto = new PetSysDto();
+        CustermSysDto petSysDto = new CustermSysDto();
 
         petSysDto.setUserid(userid.getText());
         petSysDto.setPassword(password.getText());

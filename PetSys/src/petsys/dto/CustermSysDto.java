@@ -9,7 +9,7 @@ package petsys.dto;
  *
  * @author WU HAORAN
  */
-public class PetSysDto {
+public class CustermSysDto {
 
     private int custermnumber;
     private String userid;
@@ -117,7 +117,7 @@ public class PetSysDto {
         return updatingdate;
     }
 
-    public void setCustermnunmber(int custermnumber) {
+    public void setCustermnumber(int custermnumber) {
         this.custermnumber = custermnumber;
     }
 

@@ -40,8 +40,8 @@ public class YoyakuSysDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "INSERT INTO yoyaku_list (userid,pettype,course,checkin,times,def_flag)\n"
-                    + "VALUES('" + entity.getUserid() + "','" + entity.getPettype() + "','" + entity.getCourse() + "','" + entity.getCheckin() + "','" + entity.getTimes() + "','" + 1 + "')";
+            String sql = "INSERT INTO yoyaku_list (userid,checkin,times,course,pettype,del_flag)\n"
+                    + "VALUES('" + entity.getUserid() + "','" + entity.getCheckin() + "','" + entity.getTimes() + "'','" + entity.getCourse() + "','" + entity.getPettype() + "','" + 1 + "')";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -66,7 +66,7 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "UPDATE yoyaku_list\n"
-                    + "SET def_flag='" + 0 + "';";
+                    + "SET del_flag='" + 0 + "'where userid='" + entity.getUserid() + "';";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -92,7 +92,8 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "UPDATE yoyaku_list\n"
-                    + "SET pettype='" + entity.getPettype() + "',"
+                    + "SET userid='" + entity.getUserid() + "',"
+                    + "pettype='" + entity.getPettype() + "',"
                     + "course='" + entity.getCourse() + "',"
                     + "checkin='" + entity.getCheckin() + "',"
                     + "times='" + entity.getTimes() + "';";
@@ -119,7 +120,7 @@ public class YoyakuSysDao {
 
             stmt = conn.createStatement();
 
-            String sql = "SELECT* FROM yoyaku_list where def_flag='1';";
+            String sql = "SELECT* FROM yoyaku_list where del_flag='1';";
             rset = stmt.executeQuery(sql);
 
             if (rset != null) {
@@ -128,11 +129,11 @@ public class YoyakuSysDao {
 
                     YoyakuSysEntity entity = new YoyakuSysEntity();
 
-                    entity.setUserid(rset.getString(1));
-                    entity.setCheckin(rset.getString(2));
-                    entity.setTimes(rset.getString(3));
-                    entity.setCourse(rset.getString(4));
-                    entity.setPettype(rset.getString(5));
+                    entity.setUserid(rset.getString(2));
+                    entity.setCheckin(rset.getString(3));
+                    entity.setTimes(rset.getString(4));
+                    entity.setCourse(rset.getString(5));
+                    entity.setPettype(rset.getString(6));
 
                     list.add(entity);
                 }

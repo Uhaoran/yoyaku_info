@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import petsys.entity.PetSysEntity;
+import petsys.entity.CustermSysEntity;
 
 /**
  *
  * @author WU HAORAN
  */
-public class PetSysDao {
+public class CustermSysDao {
 
     Connection conn = null;
     Statement stmt = null;
@@ -35,7 +35,7 @@ public class PetSysDao {
      *
      * @param entity
      */
-    public void createPetSys(PetSysEntity entity) {
+    public void createPetSys(CustermSysEntity entity) {
 
         try {
             conn = DriverManager.getConnection(url, user, password);
@@ -44,7 +44,7 @@ public class PetSysDao {
             String sql = "INSERT "
                     + "INTO custerm_info( "
                     + "    userid "
-                    + "    , password "
+                    + "    , userpassword "
                     + "    , name "
                     + "    , sex "
                     + "    , born "
@@ -89,7 +89,7 @@ public class PetSysDao {
             conn.close();
 
         } catch (Exception ex) {
-            Logger.getLogger(PetSysDao.class
+            Logger.getLogger(CustermSysDao.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -99,14 +99,14 @@ public class PetSysDao {
      *
      * @param entity
      */
-    public void changePetSys(PetSysEntity entity) {
+    public void changePetSys(CustermSysEntity entity) {
         try {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
             String sql = "UPDATE custerm_info\n"
                     + "SET userid='" + entity.getUserid() + "',\n"
-                    + "password='" + entity.getPassword() + "',\n"
+                    + "userpassword='" + entity.getPassword() + "',\n"
                     + "name='" + entity.getName() + "',\n"
                     + "sex='" + entity.getSex() + "',\n"
                     + "born='" + entity.getBorn() + "',\n"
@@ -126,7 +126,7 @@ public class PetSysDao {
             conn.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(PetSysDao.class
+            Logger.getLogger(CustermSysDao.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -136,12 +136,12 @@ public class PetSysDao {
      *
      * @param entity
      */
-    public void loginPetSys(PetSysEntity entity) {
+    public void loginPetSys(CustermSysEntity entity) {
         try {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "SELECT userid,password From custerm_info WHERE userid ='" + entity.getUserid() + "','" + entity.getPassword() + "' ";
+            String sql = "SELECT userid,userpassword From custerm_info WHERE userid ='" + entity.getUserid() + "','" + entity.getPassword() + "' ";
 
             System.out.println(sql);
             stmt.executeQuery(sql);
@@ -150,36 +150,32 @@ public class PetSysDao {
             conn.close();
 
         } catch (Exception ex) {
-            Logger.getLogger(PetSysDao.class
+            Logger.getLogger(CustermSysDao.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    /**
-     * 全件検索
-     *
-     * @return
+    /*
+     条件検索
      */
-    public List<PetSysEntity> selectPetSys() {
 
-        List<PetSysEntity> list = new ArrayList<>();
+    public List<CustermSysEntity> SelectPetSys() {
+
+        List<CustermSysEntity> list = new ArrayList<>();
 
         try {
 
             conn = DriverManager.getConnection(url, user, password);
 
             stmt = conn.createStatement();
-
-            String sql = "SELECT* FROM custerm_info where del_flag='0';";
+            CustermSysEntity entity = new CustermSysEntity();
+            String sql = "SELECT*From custerm_info WHERE custermnumber='" + entity.getCustermnumber() + "'OR userid ='" + entity.getUserid() + "'OR tel='" + entity.getTel() + "' ";
             rset = stmt.executeQuery(sql);
 
             if (rset != null) {
 
                 while (rset.next()) {
-
-                    PetSysEntity entity = new PetSysEntity();
-
-                    entity.setCustermnunmber(rset.getInt(1));
+                  
+                    entity.setCustermnumber(rset.getInt(1));
                     entity.setUserid(rset.getString(2));
                     entity.setPassword(rset.getString(3));
                     entity.setName(rset.getString(4));
@@ -206,7 +202,65 @@ public class PetSysDao {
             conn.close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(PetSysDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CustermSysDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return list;
+
+    }
+
+    /**
+     * 全件検索
+     *
+     * @return
+     */
+    public List<CustermSysEntity> selectPetSys() {
+
+        List<CustermSysEntity> list = new ArrayList<>();
+
+        try {
+
+            conn = DriverManager.getConnection(url, user, password);
+
+            stmt = conn.createStatement();
+
+            String sql = "SELECT* FROM custerm_info where del_flag='0';";
+            rset = stmt.executeQuery(sql);
+
+            if (rset != null) {
+
+                while (rset.next()) {
+
+                    CustermSysEntity entity = new CustermSysEntity();
+
+                    entity.setCustermnumber(rset.getInt(1));
+                    entity.setUserid(rset.getString(2));
+                    entity.setPassword(rset.getString(3));
+                    entity.setName(rset.getString(4));
+                    entity.setSex(rset.getString(5));
+                    entity.setBorn(rset.getString(6));
+                    entity.setAddress(rset.getString(7));
+                    entity.setTel(rset.getString(8));
+                    entity.setEmail(rset.getString(9));
+                    entity.setPettype(rset.getString(10));
+                    entity.setMultiheaded(rset.getString(11));
+                    entity.setPetname(rset.getString(12));
+                    entity.setPetborn(rset.getString(13));
+                    entity.setPetsex(rset.getString(14));
+                    entity.setPetmedicalhistory(rset.getString(15));
+                    entity.setCreationdate(rset.getString(17));
+                    entity.setUpdatingdate(rset.getString(18));
+                    list.add(entity);
+                }
+
+            }
+
+            rset.close();
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CustermSysDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return list;

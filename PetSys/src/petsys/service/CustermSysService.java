@@ -7,26 +7,27 @@ package petsys.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import petsys.controller.LoginNG;
 import petsys.controller.Yoyaku;
-import petsys.dao.PetSysDao;
-import petsys.dto.PetSysDto;
-import petsys.entity.PetSysEntity;
+import petsys.dao.CustermSysDao;
+import petsys.dto.CustermSysDto;
+import petsys.entity.CustermSysEntity;
 
 /**
  *
  * @author WU HAORAN
  */
-public class PetSysService {
+public class CustermSysService {
 
-    PetSysDao petSysDao = new PetSysDao();
-    PetSysEntity entity = new PetSysEntity();
+    CustermSysDao custermSysDao = new CustermSysDao();
+    CustermSysEntity entity = new CustermSysEntity();
 
     /**
      * 新規登録
      *
      * @param petSysDto
      */
-    public void createPetSys(PetSysDto petSysDto) {
+    public void createPetSys(CustermSysDto petSysDto) {
 
         System.out.println(petSysDto.getCustermnumber());
         System.out.println(petSysDto.getUserid());
@@ -47,7 +48,7 @@ public class PetSysService {
         System.out.println(petSysDto.getCreationdate());
         System.out.println(petSysDto.getUpdatingdate());
 
-        entity.setCustermnunmber(petSysDto.getCustermnumber());
+        entity.setCustermnumber(petSysDto.getCustermnumber());
         entity.setUserid(petSysDto.getUserid());
         entity.setPassword(petSysDto.getPassword());
         entity.setName(petSysDto.getName());
@@ -66,15 +67,17 @@ public class PetSysService {
         entity.setCreationdate(petSysDto.getCreationdate());
         entity.setUpdatingdate(petSysDto.getUpdatingdate());
 
-        petSysDao.createPetSys(entity);
+        custermSysDao.createPetSys(entity);
 
     }
+
     /**
      * お客様情報変更
-     * @param petSysDto 
+     *
+     * @param petSysDto
      */
-    public void changePetSys(PetSysDto petSysDto) {
-        
+    public void changePetSys(CustermSysDto petSysDto) {
+
         System.out.println(petSysDto.getCustermnumber());
         System.out.println(petSysDto.getUserid());
         System.out.println(petSysDto.getPassword());
@@ -91,9 +94,8 @@ public class PetSysService {
         System.out.println(petSysDto.getPetsex());
         System.out.println(petSysDto.getVaccinationdate());
         System.out.println(petSysDto.getPetmedicalhistory());
-    
 
-        entity.setCustermnunmber(petSysDto.getCustermnumber());
+        entity.setCustermnumber(petSysDto.getCustermnumber());
         entity.setUserid(petSysDto.getUserid());
         entity.setPassword(petSysDto.getPassword());
         entity.setName(petSysDto.getName());
@@ -109,18 +111,16 @@ public class PetSysService {
         entity.setPetsex(petSysDto.getPetsex());
         entity.setVaccinationdate(petSysDto.getVaccinationdate());
         entity.setPetmedicalhistory(petSysDto.getPetmedicalhistory());
-     
-        petSysDao.changePetSys(entity);
+
+        custermSysDao.changePetSys(entity);
     }
-    
-    
 
     /**
      * ログイン
      *
      * @param petSysDto
      */
-    public void loginPetSys(PetSysDto petSysDto) {
+    public void loginPetSys(CustermSysDto petSysDto) {
 
         String userid = petSysDto.getUserid();
         String password = String.valueOf(petSysDto.getPassword());
@@ -136,7 +136,47 @@ public class PetSysService {
 
         } else {
             System.out.print("IDまたパスワードが違います");
+            LoginNG l = new LoginNG();
+            l.setVisible(true);
         }
+
+    }
+
+    /**
+     * 条件検索
+     *
+     */
+    public List<CustermSysDto> selectTerm() {
+        List<CustermSysEntity> list = custermSysDao.SelectPetSys();
+
+        List<CustermSysDto> dto = new ArrayList<>();
+
+        for (CustermSysEntity e : list) {
+
+            CustermSysDto d = new CustermSysDto();
+
+            d.setCustermnumber(e.getCustermnumber());
+            d.setUserid(e.getUserid());
+            d.setPassword(e.getPassword());
+            d.setName(e.getName());
+            d.setSex(e.getSex());
+            d.setBorn(e.getBorn());
+            d.setAddress(e.getAddress());
+            d.setTel(e.getTel());
+            d.setEmail(e.getEmail());
+            d.setPettype(e.getPettype());
+            d.setMultiheaded(e.getMultiheaded());
+            d.setPetname(e.getPetname());
+            d.setPetborn(e.getPetborn());
+            d.setPetsex(e.getPetsex());
+            d.setVaccinationdate(e.getVaccintiondate());
+            d.setPetmedicalhistory(e.getPetmedicalhistory());
+            d.setCreationdate(e.getCreationdate());
+            d.setUpdatingdate(e.getUpdatingdate());
+            dto.add(d);
+        }
+
+        return dto;
 
     }
 
@@ -145,17 +185,17 @@ public class PetSysService {
      *
      * @return
      */
-    public List<PetSysDto> selectAll() {
+    public List<CustermSysDto> selectAll() {
 
-        List<PetSysEntity> list = petSysDao.selectPetSys();
+        List<CustermSysEntity> list = custermSysDao.selectPetSys();
 
-        List<PetSysDto> dto = new ArrayList<>();
+        List<CustermSysDto> dto = new ArrayList<>();
 
-        for (PetSysEntity e : list) {
+        for (CustermSysEntity e : list) {
 
-            PetSysDto d = new PetSysDto();
+            CustermSysDto d = new CustermSysDto();
 
-            d.setCustermnunmber(e.getCustermnumber());
+            d.setCustermnumber(e.getCustermnumber());
             d.setUserid(e.getUserid());
             d.setPassword(e.getPassword());
             d.setName(e.getName());

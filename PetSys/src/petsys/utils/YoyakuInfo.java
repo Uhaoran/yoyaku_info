@@ -256,7 +256,7 @@ public class YoyakuInfo extends javax.swing.JFrame {
         df.setRowCount(0);
 
         for (YoyakuSysDto d : dto) {
-            df.addRow(new Object[]{d.getUserid(),d.getCourse(),d.getPettype(), d.getTimes(),d.getCheckin()});
+            df.addRow(new Object[]{d.getUserid(), d.getCheckin(), d.getTimes(), d.getCourse(), d.getPettype()});
         }
 
     }
@@ -267,16 +267,25 @@ public class YoyakuInfo extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         /**
-         * 予約一覧
+         * 予約キャンセル
          */
         YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
 
-        yoyakuSysDto.setUserid(userid.getText());
-        yoyakuSysDto.setCheckin(checkin.getText());
-        yoyakuSysDto.setTimes(times.getText());
-        yoyakuSysDto.setCourse(course.getText());
-        yoyakuSysDto.setPettype(pettype.getText());
+        DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
+        int row = jTable1.getSelectedRow();
 
+        userid.setText(df.getValueAt(row, 0).toString());
+        checkin.setText(df.getValueAt(row, 1).toString());
+        times.setText(df.getValueAt(row, 2).toString());
+        course.setText(df.getValueAt(row, 3).toString());
+        pettype.setText(df.getValueAt(row, 4).toString());
+        System.err.println(userid.getText());
+
+        //yoyakuSysDto.setUserid(userid.getText());
+        // yoyakuSysDto.setCheckin(checkin.getText());
+        //yoyakuSysDto.setTimes(times.getText());
+        // yoyakuSysDto.setCourse(course.getText());
+        // yoyakuSysDto.setPettype(pettype.getText());
         yoyakuSysService.deleteYoyakuSys(yoyakuSysDto);
 
 

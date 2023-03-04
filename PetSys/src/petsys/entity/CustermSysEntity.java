@@ -9,7 +9,7 @@ package petsys.entity;
  *
  * @author WU HAORAN
  */
-public class PetSysEntity {
+public class CustermSysEntity {
 
     private int custermnumber;
     private String userid;
@@ -120,7 +120,7 @@ public class PetSysEntity {
         return updatingdate;
     }
 
-    public void setCustermnunmber(int custermnumber) {
+    public void setCustermnumber(int custermnumber) {
         this.custermnumber = custermnumber;
     }
 

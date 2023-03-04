@@ -7,8 +7,8 @@ package petsys.utils;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import petsys.dto.PetSysDto;
-import petsys.service.PetSysService;
+import petsys.dto.CustermSysDto;
+import petsys.service.CustermSysService;
 
 /**
  *
@@ -16,7 +16,7 @@ import petsys.service.PetSysService;
  */
 public class CustermInfo extends javax.swing.JFrame {
 
-    PetSysService petSysService = new PetSysService();
+    CustermSysService custermSysService = new CustermSysService();
 
     /**
      * Creates new form CustermInfo
@@ -163,39 +163,46 @@ public class CustermInfo extends javax.swing.JFrame {
         petSysList();
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-          /**
-         * お客様検索
-         */
-        PetSysDto petSysDto = new PetSysDto();
-        
-       // petSysDto.setCustermnunmber(custermnumber.getInteger());
-        petSysDto.setUserid(userid.getText());
-        petSysDto.setTel(tel.getText());
-
-        petSysService.loginPetSys(petSysDto);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void custermnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custermnumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_custermnumberActionPerformed
-   /**
-    * 検索一覧
-    */
+    /**
+     * 検索一覧
+     */
     private void petSysList() {
 
-        List<PetSysDto> dto = petSysService.selectAll();
+        List<CustermSysDto> dto = custermSysService.selectAll();
 
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
 
         df.setRowCount(0);
 
-        for (PetSysDto d : dto) {
+        for (CustermSysDto d : dto) {
             df.addRow(new Object[]{d.getCustermnumber(), d.getUserid(), d.getPassword(), d.getName(), d.getSex(), d.getBorn(), d.getAddress(), d.getTel(), d.getEmail(), d.getPettype(), d.getMultiheaded(), d.getPetname(), d.getPetborn(), d.getPetsex(), d.getVaccinationdate(), d.getPetmedicalhistory()});
         }
 
     }
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        PetSysList();
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+    /**
+     * 条件検索
+     */
+    private void PetSysList() {
+        List<CustermSysDto> dto = custermSysService.selectTerm();
+
+        DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
+
+        df.setRowCount(0);
+
+        for (CustermSysDto d : dto) {
+            df.addRow(new Object[]{d.getCustermnumber(), d.getUserid(), d.getPassword(), d.getName(), d.getSex(), d.getBorn(), d.getAddress(), d.getTel(), d.getEmail(), d.getPettype(), d.getMultiheaded(), d.getPetname(), d.getPetborn(), d.getPetsex(), d.getVaccinationdate(), d.getPetmedicalhistory()});
+        }
+
+    }
+
+    private void custermnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custermnumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_custermnumberActionPerformed
 
     /**
      * @param args the command line arguments
