@@ -31,18 +31,21 @@ public class CustermSysDto {
     private String updatingdate;
     private String men;
     private String lady;
-    
-    public String getMen(){
+
+    public String getMen() {
         return men;
     }
-    public void setMen(String men){
-        this.men=men;
+
+    public void setMen(String men) {
+        this.men = men;
     }
-    public String getLady(){
+
+    public String getLady() {
         return lady;
     }
-    public void setLady(){
-        this.lady=lady;
+
+    public void setLady() {
+        this.lady = lady;
     }
 
     public int getCustermnumber() {
@@ -188,7 +191,5 @@ public class CustermSysDto {
     public void setUpdatingdate(String updatingdate) {
         this.updatingdate = updatingdate;
     }
-
-    
 
 }

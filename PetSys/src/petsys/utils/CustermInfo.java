@@ -39,8 +39,6 @@ public class CustermInfo extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        custermnumber = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         userid = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -72,14 +70,6 @@ public class CustermInfo extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("会員番号");
-
-        custermnumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                custermnumberActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("ユーザーID");
 
         jLabel3.setText("電話番号");
@@ -95,7 +85,6 @@ public class CustermInfo extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(297, 297, 297)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,9 +97,7 @@ public class CustermInfo extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(custermnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(80, 80, 80)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(334, 334, 334))))
@@ -120,11 +107,7 @@ public class CustermInfo extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(custermnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,9 +127,10 @@ public class CustermInfo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 125, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,13 +144,13 @@ public class CustermInfo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        petSysList();
+        CustermAllList();
 
     }//GEN-LAST:event_jButton1ActionPerformed
     /**
      * 検索一覧
      */
-    private void petSysList() {
+    private void CustermAllList() {
 
         List<CustermSysDto> dto = custermSysService.selectAll();
 
@@ -195,14 +179,12 @@ public class CustermInfo extends javax.swing.JFrame {
         df.setRowCount(0);
 
         for (CustermSysDto d : dto) {
-            df.addRow(new Object[]{d.getCustermnumber(), d.getUserid(), d.getPassword(), d.getName(), d.getSex(), d.getBorn(), d.getAddress(), d.getTel(), d.getEmail(), d.getPettype(), d.getMultiheaded(), d.getPetname(), d.getPetborn(), d.getPetsex(), d.getVaccinationdate(), d.getPetmedicalhistory()});
+            if ( userid.getText().equals(d.getUserid()) || tel.getText().equals(d.getTel())) {
+
+                df.addRow(new Object[]{d.getCustermnumber(), d.getUserid(), d.getPassword(), d.getName(), d.getSex(), d.getBorn(), d.getAddress(), d.getTel(), d.getEmail(), d.getPettype(), d.getMultiheaded(), d.getPetname(), d.getPetborn(), d.getPetsex(), d.getVaccinationdate(), d.getPetmedicalhistory()});
+            }
         }
-
     }
-
-    private void custermnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custermnumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_custermnumberActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,10 +222,8 @@ public class CustermInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField custermnumber;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

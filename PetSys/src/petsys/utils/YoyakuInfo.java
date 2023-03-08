@@ -281,11 +281,11 @@ public class YoyakuInfo extends javax.swing.JFrame {
         pettype.setText(df.getValueAt(row, 4).toString());
         System.err.println(userid.getText());
 
-        //yoyakuSysDto.setUserid(userid.getText());
-        // yoyakuSysDto.setCheckin(checkin.getText());
-        //yoyakuSysDto.setTimes(times.getText());
-        // yoyakuSysDto.setCourse(course.getText());
-        // yoyakuSysDto.setPettype(pettype.getText());
+        yoyakuSysDto.setUserid(userid.getText());
+        yoyakuSysDto.setCheckin(checkin.getText());
+        yoyakuSysDto.setTimes(times.getText());
+        yoyakuSysDto.setCourse(course.getText());
+        yoyakuSysDto.setPettype(pettype.getText());
         yoyakuSysService.deleteYoyakuSys(yoyakuSysDto);
 
 

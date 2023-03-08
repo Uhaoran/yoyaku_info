@@ -158,23 +158,23 @@ public class CustermSysDao {
      条件検索
      */
 
-    public List<CustermSysEntity> SelectPetSys() {
+    public List<CustermSysEntity> SerchPetSys() {
 
         List<CustermSysEntity> list = new ArrayList<>();
-
+        CustermSysEntity entity = new CustermSysEntity();
         try {
 
             conn = DriverManager.getConnection(url, user, password);
 
             stmt = conn.createStatement();
-            CustermSysEntity entity = new CustermSysEntity();
-            String sql = "SELECT*From custerm_info WHERE custermnumber='" + entity.getCustermnumber() + "'OR userid ='" + entity.getUserid() + "'OR tel='" + entity.getTel() + "' ";
+
+            String sql = "SELECT*From custerm_info WHERE  userid ='" + entity.getUserid() + "'OR tel='" + entity.getTel() + "' ";
             rset = stmt.executeQuery(sql);
 
             if (rset != null) {
 
                 while (rset.next()) {
-                  
+
                     entity.setCustermnumber(rset.getInt(1));
                     entity.setUserid(rset.getString(2));
                     entity.setPassword(rset.getString(3));
@@ -214,7 +214,7 @@ public class CustermSysDao {
      *
      * @return
      */
-    public List<CustermSysEntity> selectPetSys() {
+    public List<CustermSysEntity> selectAllPetSys() {
 
         List<CustermSysEntity> list = new ArrayList<>();
 

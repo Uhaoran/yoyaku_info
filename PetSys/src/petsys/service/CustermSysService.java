@@ -120,10 +120,10 @@ public class CustermSysService {
      *
      * @param petSysDto
      */
-    public void loginPetSys(CustermSysDto petSysDto) {
+    public void loginPetSys(CustermSysDto custermSysDto) {
 
-        String userid = petSysDto.getUserid();
-        String password = String.valueOf(petSysDto.getPassword());
+        String userid = custermSysDto.getUserid();
+        String password = String.valueOf(custermSysDto.getPassword());
 
         if (userid.equals("123") && password.equals("123")) {
             System.out.print("登録出来ました");
@@ -145,35 +145,43 @@ public class CustermSysService {
     /**
      * 条件検索
      *
+     * @return
      */
     public List<CustermSysDto> selectTerm() {
-        List<CustermSysEntity> list = custermSysDao.SelectPetSys();
+        List<CustermSysEntity> list = custermSysDao.SerchPetSys();
 
         List<CustermSysDto> dto = new ArrayList<>();
 
+        CustermSysDto d = new CustermSysDto();
+
+        
+        String userid = d.getUserid();
+        String tel = String.valueOf(d.getTel());
+
         for (CustermSysEntity e : list) {
 
-            CustermSysDto d = new CustermSysDto();
+            if ( userid.equals(e.getUserid()) || tel.equals(e.getTel())) {
 
-            d.setCustermnumber(e.getCustermnumber());
-            d.setUserid(e.getUserid());
-            d.setPassword(e.getPassword());
-            d.setName(e.getName());
-            d.setSex(e.getSex());
-            d.setBorn(e.getBorn());
-            d.setAddress(e.getAddress());
-            d.setTel(e.getTel());
-            d.setEmail(e.getEmail());
-            d.setPettype(e.getPettype());
-            d.setMultiheaded(e.getMultiheaded());
-            d.setPetname(e.getPetname());
-            d.setPetborn(e.getPetborn());
-            d.setPetsex(e.getPetsex());
-            d.setVaccinationdate(e.getVaccintiondate());
-            d.setPetmedicalhistory(e.getPetmedicalhistory());
-            d.setCreationdate(e.getCreationdate());
-            d.setUpdatingdate(e.getUpdatingdate());
-            dto.add(d);
+                d.setCustermnumber(e.getCustermnumber());
+                d.setUserid(e.getUserid());
+                d.setPassword(e.getPassword());
+                d.setName(e.getName());
+                d.setSex(e.getSex());
+                d.setBorn(e.getBorn());
+                d.setAddress(e.getAddress());
+                d.setTel(e.getTel());
+                d.setEmail(e.getEmail());
+                d.setPettype(e.getPettype());
+                d.setMultiheaded(e.getMultiheaded());
+                d.setPetname(e.getPetname());
+                d.setPetborn(e.getPetborn());
+                d.setPetsex(e.getPetsex());
+                d.setVaccinationdate(e.getVaccintiondate());
+                d.setPetmedicalhistory(e.getPetmedicalhistory());
+                d.setCreationdate(e.getCreationdate());
+                d.setUpdatingdate(e.getUpdatingdate());
+                dto.add(d);
+            }
         }
 
         return dto;
@@ -187,7 +195,7 @@ public class CustermSysService {
      */
     public List<CustermSysDto> selectAll() {
 
-        List<CustermSysEntity> list = custermSysDao.selectPetSys();
+        List<CustermSysEntity> list = custermSysDao.selectAllPetSys();
 
         List<CustermSysDto> dto = new ArrayList<>();
 
