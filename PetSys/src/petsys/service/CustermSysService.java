@@ -76,7 +76,7 @@ public class CustermSysService {
      *
      * @param petSysDto
      */
-    public void changePetSys(CustermSysDto petSysDto) {
+    public void changeCustermSys(CustermSysDto petSysDto) {
 
         System.out.println(petSysDto.getCustermnumber());
         System.out.println(petSysDto.getUserid());
@@ -118,9 +118,9 @@ public class CustermSysService {
     /**
      * ログイン
      *
-     * @param petSysDto
+     * @param custermSysDto
      */
-    public void loginPetSys(CustermSysDto custermSysDto) {
+    public void loginCustermSys(CustermSysDto custermSysDto) {
 
         String userid = custermSysDto.getUserid();
         String password = String.valueOf(custermSysDto.getPassword());
@@ -141,55 +141,9 @@ public class CustermSysService {
         }
 
     }
-
+    
     /**
-     * 条件検索
-     *
-     * @return
-     */
-    public List<CustermSysDto> selectTerm() {
-        List<CustermSysEntity> list = custermSysDao.SerchPetSys();
-
-        List<CustermSysDto> dto = new ArrayList<>();
-
-        CustermSysDto d = new CustermSysDto();
-
-        
-        String userid = d.getUserid();
-        String tel = String.valueOf(d.getTel());
-
-        for (CustermSysEntity e : list) {
-
-            if ( userid.equals(e.getUserid()) || tel.equals(e.getTel())) {
-
-                d.setCustermnumber(e.getCustermnumber());
-                d.setUserid(e.getUserid());
-                d.setPassword(e.getPassword());
-                d.setName(e.getName());
-                d.setSex(e.getSex());
-                d.setBorn(e.getBorn());
-                d.setAddress(e.getAddress());
-                d.setTel(e.getTel());
-                d.setEmail(e.getEmail());
-                d.setPettype(e.getPettype());
-                d.setMultiheaded(e.getMultiheaded());
-                d.setPetname(e.getPetname());
-                d.setPetborn(e.getPetborn());
-                d.setPetsex(e.getPetsex());
-                d.setVaccinationdate(e.getVaccintiondate());
-                d.setPetmedicalhistory(e.getPetmedicalhistory());
-                d.setCreationdate(e.getCreationdate());
-                d.setUpdatingdate(e.getUpdatingdate());
-                dto.add(d);
-            }
-        }
-
-        return dto;
-
-    }
-
-    /**
-     * 全件検索
+     * 全件検索,条件検索
      *
      * @return
      */

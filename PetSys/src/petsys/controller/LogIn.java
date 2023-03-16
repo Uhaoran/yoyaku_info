@@ -5,7 +5,7 @@
  */
 package petsys.controller;
 
-import javax.swing.JTextField;
+
 import petsys.dto.CustermSysDto;
 import petsys.service.CustermSysService;
 
@@ -144,12 +144,12 @@ public class LogIn extends javax.swing.JFrame {
         /**
          * ログイン
          */
-        CustermSysDto petSysDto = new CustermSysDto();
+        CustermSysDto custermSysDto = new CustermSysDto();
 
-        petSysDto.setUserid(userid.getText());
-        petSysDto.setPassword(password.getText());
+        custermSysDto.setUserid(userid.getText());
+        custermSysDto.setPassword(password.getText());
 
-        petSysService.loginPetSys(petSysDto);
+        petSysService.loginCustermSys(custermSysDto);
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
