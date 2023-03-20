@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package petsys.entity;
+package petsys.dto;
 
 /**
  *
  * @author WU HAORAN
  */
-public class CustermSysEntity {
+public class CustermInfoDto {
 
     private int custermnumber;
     private String userid;
@@ -22,7 +22,7 @@ public class CustermSysEntity {
     private String address;
     private String tel;
     private String email;
-
+   
     private String creationdate;
     private String updatingdate;
 

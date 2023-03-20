@@ -6,8 +6,8 @@
 package petsys.controller;
 
 
-import petsys.dto.CustermSysDto;
-import petsys.service.CustermSysService;
+import petsys.dto.CustermInfoDto;
+import petsys.service.CustermInfoService;
 
 /**
  *
@@ -15,7 +15,7 @@ import petsys.service.CustermSysService;
  */
 public class LogIn extends javax.swing.JFrame {
 
-    CustermSysService petSysService = new CustermSysService();
+    CustermInfoService petSysService = new CustermInfoService();
 
     /**
      * Creates new form NewJFrame
@@ -144,7 +144,7 @@ public class LogIn extends javax.swing.JFrame {
         /**
          * ログイン
          */
-        CustermSysDto custermSysDto = new CustermSysDto();
+        CustermInfoDto custermSysDto = new CustermInfoDto();
 
         custermSysDto.setUserid(userid.getText());
         custermSysDto.setPassword(password.getText());

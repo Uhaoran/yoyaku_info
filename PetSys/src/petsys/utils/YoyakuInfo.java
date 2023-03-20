@@ -304,6 +304,7 @@ public class YoyakuInfo extends javax.swing.JFrame {
         times.setText(df.getValueAt(row, 2).toString());
         course.setText(df.getValueAt(row, 3).toString());
         pettype.setText(df.getValueAt(row, 4).toString());
+        
         System.err.println(userid.getText());
     }//GEN-LAST:event_useridMouseClicked
 
