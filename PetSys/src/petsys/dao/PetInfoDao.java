@@ -28,7 +28,8 @@ public class PetInfoDao {
     final String password = "postgres";
 
     /**
-     *ペット追加
+     * ペット追加
+     *
      * @param entity
      */
     public void createPetInfo(PetInfoEntity entity) {
@@ -50,8 +51,8 @@ public class PetInfoDao {
                     + "    , pet_medical_history "
                     + "    , del_flag "
                     + ") "
-                    + "VALUES ( "
-                    + "    '" + entity.getUser_id() + "' "
+                    + "SELECT  "
+                    + " ui.user_id"
                     + "    , '" + entity.getPet_type() + "' "
                     + "    , '" + entity.getPet_headed() + "' "
                     + "    , '" + entity.getPet_name() + "' "
@@ -60,8 +61,7 @@ public class PetInfoDao {
                     + "    ,'" + entity.getVaccination_date() + "' "
                     + "    ,'" + entity.getRabies_vaccine_date() + "' "
                     + "    ,'" + entity.getPetmedical_history() + "' "
-                    + "    ,'" + 0 + "' ); ";
-
+                    + "    ,'" + 0 + "' FROM user_info1 ui WHERE ui.user_id='"+entity.getUser_id()+"'; ";
             System.out.println(sql);
             stmt.executeUpdate(sql);
 

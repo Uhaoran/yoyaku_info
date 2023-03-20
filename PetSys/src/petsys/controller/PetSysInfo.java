@@ -5,17 +5,17 @@
  */
 package petsys.controller;
 
-
 import petsys.dto.PetInfoDto;
 import petsys.service.PetInfoService;
-
 
 /**
  *
  * @author WU HAORAN
  */
 public class PetSysInfo extends javax.swing.JFrame {
-    PetInfoService petInfoService=new PetInfoService();
+
+    PetInfoService petInfoService = new PetInfoService();
+
     /**
      * Creates new form PetSysInfo
      */
@@ -102,6 +102,11 @@ public class PetSysInfo extends javax.swing.JFrame {
         });
 
         jButton3.setText("閉じる");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("予約画面へ");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +231,7 @@ public class PetSysInfo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
@@ -253,22 +258,27 @@ public class PetSysInfo extends javax.swing.JFrame {
         } else {
             petInfoDto.setPet_sex(female.getText());
         }
-            petInfoDto.setVaccination_date(vaccination_date.getText());
-            petInfoDto.setRabies_vaccine_date(rabies_vaccine_date.getText());
-            petInfoDto.setPetmedical_history(petmedical_history.getText());
-            
-            petInfoService.createPetInfo(petInfoDto);
+        petInfoDto.setVaccination_date(vaccination_date.getText());
+        petInfoDto.setRabies_vaccine_date(rabies_vaccine_date.getText());
+        petInfoDto.setPetmedical_history(petmedical_history.getText());
+
+        petInfoService.createPetInfo(petInfoDto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       Yoyaku y = new Yoyaku();
+        Yoyaku y = new Yoyaku();
         y.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
-         * @param args the command line arguments
-         */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

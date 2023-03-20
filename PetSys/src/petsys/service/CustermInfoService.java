@@ -100,7 +100,7 @@ public class CustermInfoService {
         String userid = custermSysDto.getUserid();
         String password = String.valueOf(custermSysDto.getPassword());
 
-        if (userid.equals(entity.getUserid()) && password.equals(entity.getTel())) {
+        if (userid.equals("123") && password.equals("123") ){
             System.out.print("登録出来ました");
 
             /**

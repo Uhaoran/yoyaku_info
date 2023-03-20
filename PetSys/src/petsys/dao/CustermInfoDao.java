@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -42,9 +43,9 @@ public class CustermInfoDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            LocalDate createDate = LocalDate.now();
+            LocalDateTime createDateTime = LocalDateTime.now();
 
-            LocalDate updateDate = createDate.plusYears(1);
+            LocalDateTime updateDateTime = createDateTime.plusYears(1);
 
             String sql = "INSERT "
                     + "INTO user_info1( "
@@ -70,8 +71,8 @@ public class CustermInfoDao {
                     + "    ,'" + entity.getTel() + "' "
                     + "    ,'" + entity.getEmail() + " ' "
                     + "    ,'" + 0 + "' "
-                    + "    ,'" + createDate + "' "
-                    + "    ,'" + updateDate + "'); ";
+                    + "    ,'" + createDateTime + "' "
+                    + "    ,'" + updateDateTime + "'); ";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -127,7 +128,30 @@ public class CustermInfoDao {
             conn = DriverManager.getConnection(url, user, password);
             stmt = conn.createStatement();
 
-            String sql = "SELECT*FROM user_info1 WHERE useri_d ='" + entity.getUserid() + "' ";
+            String sql = "SELECT\n"
+                    + "    custermer_id\n"
+                    + "    ,ui.user_id\n"
+                    + "    , password\n"
+                    + "    , name\n"
+                    + "    , sex\n"
+                    + "    , born\n"
+                    + "    , address\n"
+                    + "    , tel\n"
+                    + "    , email\n"
+                    + "    , create_date\n"
+                    + "    , update_date\n"
+                    + "    , pet_type\n"
+                    + "    , pet_headed\n"
+                    + "    , pet_name\n"
+                    + "    , pet_born\n"
+                    + "    , pet_sex\n"
+                    + "    , vaccination_date\n"
+                    + "    , rabies_vaccine_date\n"
+                    + "    , pet_medical_history\n"
+                    + "FROM\n"
+                    + "    user_info1 AS ui \n"
+                    + "    INNER JOIN pet_info1 AS pi \n"
+                    + "        ON ui.user_id = pi.user_id ";
 
             System.out.println(sql);
             stmt.executeQuery(sql);
