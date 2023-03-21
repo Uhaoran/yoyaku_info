@@ -10,7 +10,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -226,7 +225,7 @@ public class CustermInfoDao {
 
             stmt = conn.createStatement();
 
-            String sql = "SELECT* FROM user_info1 where del_flag='0';";
+            String sql = "SELECT *FROM user_info1 where del_flag='0';";
             rset = stmt.executeQuery(sql);
 
             if (rset != null) {
@@ -245,8 +244,8 @@ public class CustermInfoDao {
                     entity.setTel(rset.getString(8));
                     entity.setEmail(rset.getString(9));
 
-                    entity.setCreationdate(rset.getString(10));
-                    entity.setUpdatingdate(rset.getString(11));
+                    entity.setCreationdate(rset.getString(11));
+                    entity.setUpdatingdate(rset.getString(12));
                     list.add(entity);
                 }
 

@@ -41,7 +41,7 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "INSERT INTO yoyaku_list (userid,checkin,times,course,pettype,del_flag)\n"
-                    + "VALUES('" + entity.getUserid() + "','" + entity.getCheckin() + "','" + entity.getTimes() + "','" + entity.getCourse() + "','" + entity.getPettype() + "','" + 1 + "')";
+                    + "VALUES('" + entity.getUserid() + "','" + entity.getCheckin() + "','" + entity.getTimes() + "','" + entity.getCourse() + "','" + entity.getPettype() + "','" + 0 + "')";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -66,7 +66,7 @@ public class YoyakuSysDao {
             stmt = conn.createStatement();
 
             String sql = "UPDATE yoyaku_list\n"
-                    + "SET del_flag='" + 0 + "'where userid='" + entity.getUserid() + "';";
+                    + "SET del_flag='" + 1 + "'where userid='" + entity.getUserid() + "';";
 
             System.out.println(sql);
             stmt.executeUpdate(sql);
@@ -120,7 +120,7 @@ public class YoyakuSysDao {
 
             stmt = conn.createStatement();
 
-            String sql = "SELECT* FROM yoyaku_list where del_flag='1';";
+            String sql = "SELECT* FROM yoyaku_list where del_flag='0';";
             rset = stmt.executeQuery(sql);
 
             if (rset != null) {
