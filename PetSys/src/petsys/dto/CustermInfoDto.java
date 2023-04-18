@@ -16,15 +16,6 @@ public class CustermInfoDto {
     private String password;
     private String name;
     private String men;
-    private String lady;
-    private String sex;
-    private String born;
-    private String address;
-    private String tel;
-    private String email;
-   
-    private String creationdate;
-    private String updatingdate;
 
     public int getCustermnumber() {
         return custermnumber;
@@ -129,5 +120,16 @@ public class CustermInfoDto {
     public void setUpdatingdate(String updatingdate) {
         this.updatingdate = updatingdate;
     }
+    private String lady;
+    private String sex;
+    private String born;
+    private String address;
+    private String tel;
+    private String email;
+   
+    private String creationdate;
+    private String updatingdate;
+
+  
 
 }
