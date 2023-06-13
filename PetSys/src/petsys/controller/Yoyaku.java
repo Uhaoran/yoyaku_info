@@ -8,7 +8,7 @@ package petsys.controller;
 import petsys.dto.YoyakuSysDto;
 import petsys.service.YoyakuSysService;
 import petsys.utils.YoyakuInfo;
-import petsys.utils.course;
+import petsys.utils.Course;
 
 /**
  *
@@ -227,7 +227,7 @@ public class Yoyaku extends javax.swing.JFrame {
          * コース料金画面に遷移
          */
 
-        course co = new course();
+        Course co = new Course();
         co.setVisible(true);
         this.dispose();
 

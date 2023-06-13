@@ -90,11 +90,22 @@ public class PetSysInfo extends javax.swing.JFrame {
 
         sex.add(male);
         male.setText("男の子");
+        male.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maleActionPerformed(evt);
+            }
+        });
 
         sex.add(female);
         female.setText("女の子");
 
         jLabel2.setText("ユーザーID");
+
+        user_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                user_idActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("ペット情報登録");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +260,7 @@ public class PetSysInfo extends javax.swing.JFrame {
          */
         PetInfoDto petInfoDto = new PetInfoDto();
 
-        petInfoDto.setUser_id(user_id.getText());
+        petInfoDto.setUser_id(user_id);
         petInfoDto.setPet_type(pet_type.getText());
         petInfoDto.setMulti_headed(pet_headed.getText());
         petInfoDto.setPet_name(pet_name.getText());
@@ -277,6 +288,14 @@ public class PetSysInfo extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void maleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_maleActionPerformed
+
+    private void user_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_user_idActionPerformed
 
     /**
      * @param args the command line arguments

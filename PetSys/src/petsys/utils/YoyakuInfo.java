@@ -271,21 +271,12 @@ public class YoyakuInfo extends javax.swing.JFrame {
          */
         YoyakuSysDto yoyakuSysDto = new YoyakuSysDto();
 
-        DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
-        int row = jTable1.getSelectedRow();
-
-        userid.setText(df.getValueAt(row, 0).toString());
-        checkin.setText(df.getValueAt(row, 1).toString());
-        times.setText(df.getValueAt(row, 2).toString());
-        course.setText(df.getValueAt(row, 3).toString());
-        pettype.setText(df.getValueAt(row, 4).toString());
-        System.err.println(userid.getText());
-
         yoyakuSysDto.setUserid(userid.getText());
         yoyakuSysDto.setCheckin(checkin.getText());
         yoyakuSysDto.setTimes(times.getText());
         yoyakuSysDto.setCourse(course.getText());
         yoyakuSysDto.setPettype(pettype.getText());
+        
         yoyakuSysService.deleteYoyakuSys(yoyakuSysDto);
 
 
@@ -298,14 +289,16 @@ public class YoyakuInfo extends javax.swing.JFrame {
     private void useridMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_useridMouseClicked
         DefaultTableModel df = (DefaultTableModel) jTable1.getModel();
         int row = jTable1.getSelectedRow();
-
+        
+    
+       
         userid.setText(df.getValueAt(row, 0).toString());
         checkin.setText(df.getValueAt(row, 1).toString());
         times.setText(df.getValueAt(row, 2).toString());
         course.setText(df.getValueAt(row, 3).toString());
         pettype.setText(df.getValueAt(row, 4).toString());
         
-        System.err.println(userid.getText());
+        //System.err.println(userid.getText());
     }//GEN-LAST:event_useridMouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

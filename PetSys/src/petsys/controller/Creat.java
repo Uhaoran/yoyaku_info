@@ -79,6 +79,12 @@ public class Creat extends javax.swing.JFrame {
 
         jLabel14.setText("ユーザーID");
 
+        userid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                useridActionPerformed(evt);
+            }
+        });
+
         jLabel15.setText("パスワード");
 
         jButton1.setText("ペット情報入力画面へ");
@@ -98,6 +104,11 @@ public class Creat extends javax.swing.JFrame {
         sex.add(men);
         men.setText("男");
         men.setToolTipText("");
+        men.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menActionPerformed(evt);
+            }
+        });
 
         sex.add(lady);
         lady.setText("女");
@@ -135,18 +146,17 @@ public class Creat extends javax.swing.JFrame {
                                 .addGap(54, 54, 54)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(password)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(14, 14, 14)
-                                            .addComponent(men, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(lady, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(userid)
-                                        .addComponent(name)
-                                        .addComponent(born, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                        .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                        .addComponent(tel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-                                        .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE))))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addComponent(men, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lady, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(userid)
+                                    .addComponent(name)
+                                    .addComponent(born, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                    .addComponent(address, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                    .addComponent(tel, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 243, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -240,21 +250,13 @@ public class Creat extends javax.swing.JFrame {
         custermSysDto.setUserid(userid.getText());
         custermSysDto.setPassword(password.getText());
         custermSysDto.setName(name.getText());
-
-        if (men.isSelected()) {
-            custermSysDto.setSex("0");
-        } else if (lady.isSelected()) {
-
-            custermSysDto.setSex("1");
+        String sex = "";
+        if (sex.equals(men.getText())) {
+            custermSysDto.setSex(men.getText());
+        } else {
+            custermSysDto.setSex(lady.getText());
         }
 
-        
-        if("0".equals("0")){
-            men.setSelected(true);
-        }
-        
-        
-        custermSysDto.setBorn(born.getText());
         custermSysDto.setAddress(address.getText());
         custermSysDto.setTel(tel.getText());
         custermSysDto.setEmail(email.getText());
@@ -268,6 +270,14 @@ public class Creat extends javax.swing.JFrame {
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
+
+    private void menActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menActionPerformed
+
+    private void useridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useridActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_useridActionPerformed
 
     /**
      * @param args the command line arguments

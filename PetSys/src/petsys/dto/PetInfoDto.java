@@ -5,6 +5,8 @@
  */
 package petsys.dto;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author WU HAORAN
@@ -91,6 +93,10 @@ public class PetInfoDto {
 
     public void setPetmedical_history(String petmedical_history) {
         this.petmedical_history = petmedical_history;
+    }
+
+    public void setUser_id(JTextField user_id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

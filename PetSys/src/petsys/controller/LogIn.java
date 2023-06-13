@@ -8,6 +8,7 @@ package petsys.controller;
 
 import petsys.dto.CustermInfoDto;
 import petsys.service.CustermInfoService;
+import petsys.utils.Course;
 
 /**
  *
@@ -142,8 +143,11 @@ public class LogIn extends javax.swing.JFrame {
         custermSysDto.setPassword(password.getText());
 
         petSysService.loginCustermSys(custermSysDto);
-
-
+/**
+ * 料金画面に遷移
+ */
+        Course c = new Course();
+        c.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
